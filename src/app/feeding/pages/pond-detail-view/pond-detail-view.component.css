@@ -1,0 +1,21 @@
+.pond-detail-content {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.pond-detail-content{
+  padding: 1rem;
+}
+
+.info-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pond-detail{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}

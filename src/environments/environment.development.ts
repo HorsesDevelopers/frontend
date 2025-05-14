@@ -1,5 +1,4 @@
 export const environment = {
   production: false,
-  //Server Base Path for Spring Boot REST
-  serverBasePath: 'http://localhost:8091/api/v1'
+  serverBasePath: 'https://my-json-server.typicode.com/HorsesDevelopers/fake-api'
 };

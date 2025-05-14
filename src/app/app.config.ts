@@ -5,6 +5,7 @@ import { HttpClient, provideHttpClient } from "@angular/common/http";
 import { importProvidersFrom } from '@angular/core';
 
 import { routes } from './app.routes';
+import {provideHttpClient} from '@angular/common/http';
 
 import { withInterceptors } from "@angular/common/http";
 import { authenticationInterceptor } from "./iam/services/authentication.interceptor";
@@ -18,7 +19,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }),
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideHttpClient(withInterceptors([authenticationInterceptor])),
     importProvidersFrom(
