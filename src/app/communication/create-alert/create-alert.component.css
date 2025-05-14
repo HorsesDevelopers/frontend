@@ -1,0 +1,60 @@
+.container {
+  padding: 32px;
+  max-width: 600px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+}
+
+.timestamp-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timestamp-input input {
+  width: 60px;
+  text-align: center;
+}
+
+button {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  width: 100px;
+  cursor: pointer;
+  transition: 0.3s ease all;
+  align-self: flex-start;
+}
+
+button:hover {
+  background-color: #f0f0f0;
+}
+
