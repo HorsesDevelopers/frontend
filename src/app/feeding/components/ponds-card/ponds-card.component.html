@@ -1,10 +1,10 @@
 <mat-card class="pond-card">
   <div class="pond-image">
-    <img [src]="imageUrl" alt="{{pondName}} image">
+    <img [src]="pond.imageUrl" alt="{{pond.name}} image">
   </div>
   <mat-card-content class="pond-details">
-    <h2>{{pondName}}</h2>
-    <p>Sensors: {{sensorCount}}</p>
-    <p>Fish: {{fishCount}}</p>
+    <h2>{{pond.name}}</h2>
+    <p>Sensors: {{pond.sensorQuantity}}</p>
+    <p>Fish: {{pond.fishQuantity}}</p>
   </mat-card-content>
 </mat-card>

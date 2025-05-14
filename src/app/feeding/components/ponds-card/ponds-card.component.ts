@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import {MatCard, MatCardContent} from '@angular/material/card';
+import {Pond} from '../../model/pond.entity';
 
 @Component({
   selector: 'app-ponds-card',
@@ -11,8 +12,5 @@ import {MatCard, MatCardContent} from '@angular/material/card';
   styleUrl: './ponds-card.component.css'
 })
 export class PondsCardComponent {
-  @Input() pondName: string = '';
-  @Input() sensorCount: number = 0;
-  @Input() fishCount: number = 0;
-  @Input() imageUrl: string = 'assets/default-pond.jpg'; // Default image path
+  @Input()pond!: Pond;
 }

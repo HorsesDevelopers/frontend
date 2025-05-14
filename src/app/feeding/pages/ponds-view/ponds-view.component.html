@@ -1,5 +1,7 @@
 <div class="ponds-container">
   <h1>My Ponds</h1>
   <button mat-raised-button color="primary">Add Pond</button>
-  <app-ponds-card></app-ponds-card>
+  <ng-container *ngIf="dataSource">
+    <app-ponds-card *ngFor="let pond of dataSource.data" [pond]="pond"></app-ponds-card>
+  </ng-container>
 </div>
