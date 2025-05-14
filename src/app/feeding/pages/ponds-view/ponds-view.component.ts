@@ -19,16 +19,19 @@ import {PondService} from '../../service/pond.service';
 })
 export class PondsViewComponent implements OnInit {
   protected pondData!: Pond;
-protected dataSource: MatTableDataSource<Pond>=new MatTableDataSource<Pond>();
-private pondService: PondService = inject(PondService);
-constructor() {
-  this.pondData = new Pond({});
-  this.dataSource = new MatTableDataSource();
-  console.log(this.pondService);
-}
+  protected dataSource: MatTableDataSource<Pond> = new MatTableDataSource<Pond>();
+  private pondService: PondService = inject(PondService);
+
+  constructor() {
+    this.pondData = new Pond({});
+    this.dataSource = new MatTableDataSource();
+    console.log(this.pondService);
+  }
+
   ngOnInit(): void {
     this.getAllPond();
   }
+
   private getAllPond() {
     this.pondService.getAll().subscribe((response: Pond[]) => {
       this.dataSource.data = response;
