@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {PondsViewComponent} from './feeding/pages/ponds-view/ponds-view.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [PondsViewComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
