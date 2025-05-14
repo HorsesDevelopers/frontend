@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Create alert</h2>
+  <form (ngSubmit)="createAlert()">
+    <label>Alert Name</label>
+    <input [(ngModel)]="name" name="name" required />
+
+    <label>Description</label>
+    <input [(ngModel)]="description" name="description" required />
+
+    <label>Timestamp</label>
+    <div class="timestamp-input">
+      <input [(ngModel)]="hour" name="hour" placeholder="HH" required />
+      <span>:</span>
+      <input [(ngModel)]="minute" name="minute" placeholder="MM" required />
+    </div>
+
+    <button type="submit">Create</button>
+  </form>
+</div>
+

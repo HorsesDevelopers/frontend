@@ -1,0 +1,33 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AlertService, Alert } from '../alert.service';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-communication',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './communication.component.html',
+  styleUrls: ['./communication.component.css']
+})
+export class CommunicationComponent implements OnInit {
+  alerts: Alert[] = [];
+
+  constructor(private alertService: AlertService, private router: Router) {}
+
+  ngOnInit(): void {
+    this.alerts = this.alertService.getAlerts();
+  }
+
+  goToCreateAlert() {
+    this.router.navigate(['/create-alert']);
+  }
+
+  deleteAlert(index: number) {
+    this.alertService.removeAlert(index);
+    this.alerts = this.alertService.getAlerts();
+  }
+
+
+}
+
