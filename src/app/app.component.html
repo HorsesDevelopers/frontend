@@ -1,2 +1,22 @@
-
-<router-outlet></router-outlet>
+<div class="sidenav-container">
+  <ng-container *ngIf="showSidebar">
+    <div class="sidenav">
+      <div class="logo-container">
+        <img [src]="logo" class="logo">
+      </div>
+      <mat-nav-list class="list">
+        <a routerLink="/home">Home</a>
+        <a routerLink="/schedule">Schedule</a>
+        <a routerLink="/communication">Communication</a>
+        <a routerLink="/ponds">Ponds</a>
+        <a routerLink="/devices">Devices</a>
+      </mat-nav-list>
+      <button class="log-out-button" (click)="logout()">
+        Cerrar Sesión
+      </button>
+    </div>
+  </ng-container>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

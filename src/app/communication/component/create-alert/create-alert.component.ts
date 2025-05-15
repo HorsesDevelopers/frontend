@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertService } from '../../alert.service';
+import { AlertService } from '../../service/alert.service';
 import { FormsModule } from '@angular/forms';
 
 @Component({

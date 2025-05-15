@@ -1,0 +1,136 @@
+.create-schedule-container {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background: #FFFFFF;
+  font-family: 'Sora', sans-serif;
+}
+
+.page-title {
+  width: 240px;
+  height: 20px;
+  margin: 30px auto;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+}
+
+.schedule-form-container {
+  width: 90%;
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 50px;
+  background: #D9D9D9;
+  border-radius: 15px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.form-row.four-columns .form-group {
+  width: 20%;
+}
+
+.form-row.four-columns .sensor-condition input {
+  width: 35%;
+}
+
+.form-group {
+  width: 48%;
+}
+
+.form-group.full-width {
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 20px;
+  color: #000000;
+}
+
+input, textarea {
+  width: 100%;
+  height: 55px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  border-radius: 15px;
+  padding: 0 15px;
+  font-size: 24px;
+  line-height: 20px;
+  color: #000000;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #B9B9B9;
+}
+
+textarea {
+  height: 55px;
+  padding: 15px;
+  resize: none;
+}
+
+.input-with-unit {
+  position: relative;
+}
+
+.unit {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: #000000;
+}
+
+.sensor-condition {
+  display: flex;
+  align-items: center;
+}
+
+.sensor-condition input {
+  width: 85px;
+}
+
+.comparator {
+  margin: 0 10px;
+  font-size: 24px;
+  color: #000000;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  width: 90%;
+  max-width: 1130px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.create-button, .back-button {
+  width: 206px;
+  height: 59px;
+  background: rgba(249, 59, 59, 0.57);
+  border-radius: 15px;
+  border: none;
+  font-family: 'Sora';
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 20px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.back-button {
+  width: 244px;
+}
