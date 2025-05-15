@@ -1,0 +1,48 @@
+<div class="device-page">
+  <div class="device-page-content">
+    <h1>Devices</h1>
+    <div class="tables-container">
+      <div class="item-container">
+        <h2>Sensores </h2>
+        <table class="device-table">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Status</th>
+            <th>Pond ID</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let sensor of sensors">
+            <td>{{ sensor.id }}</td>
+            <td>{{ sensor.status }}</td>
+            <td>{{ sensor.pond_id }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="item-container">
+        <h2>Dispensers </h2>
+
+        <table class="device-table">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Status</th>
+            <th>Pond ID</th>
+            <th>Last Dispense</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let dispenser of dispensers">
+            <td>{{ dispenser.id }}</td>
+            <td>{{ dispenser.status }}</td>
+            <td>{{ dispenser.pond_id }}</td>
+            <td>{{ dispenser.lastDispense }}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,6 +7,7 @@ import { CreateAlertComponent } from './communication/create-alert/create-alert.
 import {PondDetailViewComponent} from './feeding/pages/pond-detail-view/pond-detail-view.component';
 import {PondsViewComponent} from './feeding/pages/ponds-view/ponds-view.component';
 import {ScheduleViewComponent} from './schedule/pages/schedule-view/schedule-view.component';
+import {DevicePageComponent} from './device/pages/device-page/device-page.component';
 export const routes: Routes = [
   { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
   { path: 'communication', component: CommunicationComponent },
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'create-alert', component: CreateAlertComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent},
+  { path: 'devices', component: DevicePageComponent},
   { path: 'ponds', component: PondsViewComponent },
   { path: 'ponds/id', component: PondDetailViewComponent },
   { path: '**', component: PondsViewComponent}
