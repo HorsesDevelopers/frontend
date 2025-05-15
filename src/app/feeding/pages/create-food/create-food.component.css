@@ -1,0 +1,97 @@
+.create-food-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.create-food-title {
+  font-family: 'Sora', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 20px;
+  color: #000000;
+  margin-bottom: 40px;
+}
+
+.form-group {
+  margin-bottom: 30px;
+}
+
+.form-group label {
+  display: block;
+  font-family: 'Sora', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  box-sizing: border-box;
+  width: 429px;
+  height: 57px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  padding: 0 15px;
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+}
+
+.quantity-input {
+  box-sizing: border-box;
+  width: 143px;
+  height: 57px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  padding: 0 15px;
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+}
+
+.pond-select {
+  box-sizing: border-box;
+  width: 253px;
+  height: 57px;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  padding: 0 15px;
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+}
+
+.button-group {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.create-btn {
+  width: 202px;
+  height: 65px;
+  background: #377BFF;
+  border: none;
+  font-family: 'Sora', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  width: 202px;
+  height: 65px;
+  background: #F56767;
+  border: none;
+  font-family: 'Sora', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #FFFFFF;
+  cursor: pointer;
+}

@@ -6,7 +6,10 @@ export interface PondDetail {
   volume: number;
   size: number;
   createdAt: string;
+  imageUrl: string;
   fish: Fish[];
+  food: Food[];
+  fishPerTypeQuantity: { [key: string]: number };
 }
 
 interface Fish {
@@ -14,4 +17,14 @@ interface Fish {
   type: string;
   quantity: number;
   joinedAt: string;
+}
+
+
+
+interface Food {
+  id: number;
+  name: string;
+  brand: string;
+  quantity: number;
+  date: string;
 }

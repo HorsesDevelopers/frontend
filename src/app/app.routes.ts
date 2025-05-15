@@ -8,6 +8,8 @@ import {PondDetailViewComponent} from './feeding/pages/pond-detail-view/pond-det
 import {PondsViewComponent} from './feeding/pages/ponds-view/ponds-view.component';
 import {ScheduleViewComponent} from './schedule/pages/schedule-view/schedule-view.component';
 import {CreateScheduleComponent} from './schedule/components/create-schedule/create-schedule.component';
+import {CreateSensorComponent} from './feeding/pages/create-sensor/create-sensor.component';
+import {CreateFoodComponent} from './feeding/pages/create-food/create-food.component';
 import {SchedulePendingComponent} from './schedule/components/schedule-pending/schedule-pending.component';
 import {DevicePageComponent} from './device/pages/device-page/device-page.component';
 import {AddDeviceComponent} from './device/pages/add-device/add-device.component';
@@ -26,7 +28,10 @@ export const routes: Routes = [
   { path: 'devices', component: DevicePageComponent},
   { path: 'add-devices', component: AddDeviceComponent},
   { path: 'ponds', component: PondsViewComponent },
-  { path: 'ponds/id', component: PondDetailViewComponent },
-  { path: '**', component: PondsViewComponent}
-  ];
+  //{ path: '**', component: PondsViewComponent},
+  { path: 'pond-detail/:id', component: PondDetailViewComponent },
+  { path: 'sensors/create', component: CreateSensorComponent },
+  { path: 'foods/create', component: CreateFoodComponent },
+
+];
 
