@@ -2,11 +2,23 @@
   <div class="home-container">
     <div class="pond-info">
       <app-sensor-info [sensorId]="selectedSensorId"></app-sensor-info>
-      <ul>
-        <li *ngFor="let sensor of sensors" (click)="selectSensor(sensor.id)" style="cursor:pointer">
+      <div class="spacer-sp">
+      </div>
+      <div *ngIf="sensors" class="sensor-buttons-list">
+        <button *ngFor="let sensor of sensors"
+                (click)="selectSensor(sensor.id)"
+                class="sensor-buttons"
+                [ngClass]="{'active': selectedSensorId === sensor.id}">
           {{ sensor.id }} - {{ sensor.status }}
-        </li>
-      </ul>
+        </button>
+      </div>
+    </div>
+    <button class="button-add" style="margin-top: 90px"
+    (click)="goToCreateSchedule()">
+      Add Schedule
+    </button>
+    <div class="schedule-info">
+      <app-list-schedule></app-list-schedule>
     </div>
   </div>
 </div>

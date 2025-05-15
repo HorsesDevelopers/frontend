@@ -9,12 +9,47 @@
 .home-container{
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 90%;
   height: 90%;
 }
+
+.spacer-sp{
+  padding-left: 90px;
+}
+
 .pond-info{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  width: 60%;
+}
+.sensor-buttons-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
-  gap: 10px;
+  height: 100%;
+  box-shadow: 0 4px 16px black;
+  border-radius: 16px;
+  background: #fff;
+  padding: 24px;
+}
+
+.sensor-buttons{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border: none;
+  border-radius: 16px;
+  background: #85F59D;
+  padding: 24px;
+}
+.sensor-buttons:hover{
+  background: #5EDC7A;
+  cursor: pointer;
+}
+.sensor-buttons.active{
+  background: #F93B3B;
 }

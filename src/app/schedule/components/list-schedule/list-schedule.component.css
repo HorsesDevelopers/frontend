@@ -1,0 +1,33 @@
+.schedule-cards-row {
+  display: flex;
+  gap: 24px;
+  margin: 24px 0;
+}
+
+.schedule-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.15);
+  padding: 20px 32px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pond-title {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: 1.2em;
+  margin-bottom: 12px;
+}
+
+.food {
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.time {
+  color: #2196f3;
+  font-size: 0.95em;
+}

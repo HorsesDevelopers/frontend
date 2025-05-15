@@ -17,6 +17,7 @@ import { NgForOf } from '@angular/common';
 export class DevicePageComponent implements OnInit {
   sensors: Sensor[] = [];
   dispensers: Dispenser[] = [];
+  selectedSensorId?: number;
 
   constructor(
     private sensorService: SensorService,
