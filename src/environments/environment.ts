@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverBasePath: 'http://localhost:3000'
+  serverBasePath: 'https://my-json-server.typicode.com/HorsesDevelopers/fake-api'
 };

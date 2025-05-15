@@ -14,7 +14,8 @@ import {SchedulePendingComponent} from './schedule/components/schedule-pending/s
 import {DevicePageComponent} from './device/pages/device-page/device-page.component';
 import {AddDeviceComponent} from './device/pages/add-device/add-device.component';
 import {HomeComponent} from './iam/pages/home/home.component';
-import {PageNotFoundComponent} from './shared/page/page-not-found/page-not-found.component';
+import {PageNotFoundComponent} from './public/pages/page-not-found/page-not-found.component';
+
 
 export const routes: Routes = [
   { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
