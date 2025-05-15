@@ -1,0 +1,81 @@
+<div class="create-schedule-container">
+  <h1 class="page-title">New Schedule</h1>
+
+  <div class="schedule-form-container">
+    <form [formGroup]="scheduleForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Pond Name:</label>
+          <input type="text" formControlName="pondName" placeholder="Name">
+        </div>
+
+        <div class="form-group">
+          <label>Especies:</label>
+          <input type="text" formControlName="species" placeholder="Name">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Size:</label>
+          <div class="input-with-unit">
+            <input type="number" formControlName="size" placeholder="size" min="0">
+            <span class="unit">cm</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Mass:</label>
+          <div class="input-with-unit">
+            <input type="number" formControlName="mass" placeholder="weight" min="0">
+            <span class="unit">kg</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row four-columns">
+        <div class="form-group">
+          <label>Kind of food:</label>
+          <input type="text" formControlName="food" placeholder="type">
+        </div>
+
+        <div class="form-group">
+          <label>Weight of food:</label>
+          <div class="input-with-unit">
+            <input type="number" formControlName="weightOfFood" placeholder="weight" min="0">
+            <span class="unit">kg</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Loop:</label>
+          <div class="input-with-unit">
+            <input type="number" formControlName="loop" placeholder="time">
+            <span class="unit">hours</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Sensor condition:</label>
+          <div class="sensor-condition">
+            <input type="text" formControlName="sensorConditionMin" placeholder="metric">
+            <span class="comparator">≤</span>
+            <input type="text" formControlName="sensorConditionMax" placeholder="metric">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group full-width">
+          <label>Comment:</label>
+          <textarea formControlName="comment" placeholder="type here"></textarea>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="buttons-container">
+    <button class="back-button" (click)="goBack()">Back</button>
+    <button class="create-button" (click)="createSchedule()">Create</button>
+  </div>
+</div>

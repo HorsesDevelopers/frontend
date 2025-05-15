@@ -7,12 +7,17 @@ import { CreateAlertComponent } from './communication/create-alert/create-alert.
 import {PondDetailViewComponent} from './feeding/pages/pond-detail-view/pond-detail-view.component';
 import {PondsViewComponent} from './feeding/pages/ponds-view/ponds-view.component';
 import {ScheduleViewComponent} from './schedule/pages/schedule-view/schedule-view.component';
+import {CreateScheduleComponent} from './schedule/components/create-schedule/create-schedule.component';
+import {SchedulePendingComponent} from './schedule/components/schedule-pending/schedule-pending.component';
 import {DevicePageComponent} from './device/pages/device-page/device-page.component';
 import {AddDeviceComponent} from './device/pages/add-device/add-device.component';
+
 export const routes: Routes = [
   { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
   { path: 'communication', component: CommunicationComponent },
   { path: 'schedule', component: ScheduleViewComponent },
+  { path: 'schedule/new', component: CreateScheduleComponent },
+  { path: 'schedule/pending', component: SchedulePendingComponent },
   { path: 'create-alert', component: CreateAlertComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent},

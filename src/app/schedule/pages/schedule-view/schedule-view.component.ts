@@ -4,6 +4,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import {Schedule} from '../../interfaces/schedule.interface';
 import {NgForOf} from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-schedule-view',
@@ -19,6 +20,7 @@ export class ScheduleViewComponent implements OnInit {
   protected scheduleData!: Schedule;
   protected dataSource: MatTableDataSource<any>;
   private scheduleService: ScheduleService = inject(ScheduleService);
+  private router: Router = inject(Router);
   searchText: string = '';
 
   constructor() {
@@ -35,6 +37,14 @@ export class ScheduleViewComponent implements OnInit {
     this.scheduleService.getAll().subscribe((response: Schedule[]) => {
       this.dataSource.data = response;
     });
+  }
+
+  protected createNewSchedule() {
+    this.router.navigate(['/schedule/new']).then();
+  }
+
+  protected goToPending() {
+    this.router.navigate(['/schedule/pending']).then();
   }
 
 

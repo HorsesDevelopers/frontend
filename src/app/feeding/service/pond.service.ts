@@ -8,6 +8,6 @@ import {BaseService} from '../../shared/services/base.service';
 export class PondService extends BaseService<Pond> {
   constructor() {
     super();
-    this.resourceEndpoint = '/ponds';
+    this.resourceEndpoint = '/pond';
   }
 }
