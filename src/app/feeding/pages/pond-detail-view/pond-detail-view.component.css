@@ -338,6 +338,78 @@
   font-style: italic;
 }
 
+.sensors-tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.sensor-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.create-sensor-btn {
+  background-color: #377BFF;
+  color: white;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  height: 65px;
+  width: 193px;
+  line-height: 20px;
+  padding: 0 15px;
+  border-radius: 0;
+}
+
+.sensor-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.sensor-table th {
+  background-color: #377BFF;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: left;
+  padding: 16px 20px;
+  border: 1px solid #000000;
+}
+
+.sensor-table td {
+  padding: 16px 20px;
+  border: 1px solid #000000;
+  font-size: 16px;
+}
+
+.status-indicator {
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #000000;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.status-indicator.connected {
+  background-color: #85F59D;
+}
+
+.status-indicator.disconnected {
+  background-color: #F56767;
+}
+
+.no-data {
+  text-align: center;
+  font-style: italic;
+}
+
 @media (max-width: 768px) {
   .food-table {
     font-size: 0.9rem;
