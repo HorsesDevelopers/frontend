@@ -1,0 +1,38 @@
+.add-device-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  margin: auto;
+  background: #FAFAFA;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.box-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.input-text, .list-text, textarea {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 14px;
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+  height: 80px;
+}
+
