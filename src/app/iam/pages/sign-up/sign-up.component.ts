@@ -6,7 +6,6 @@ import {SignUpRequest} from "../../model/sign-up.request";
 import {MatError, MatFormField} from "@angular/material/form-field";
 import {MatInput, MatLabel} from "@angular/material/input";
 import {NgIf} from "@angular/common";
-import {MatOption, MatSelect} from '@angular/material/select';
 
 @Component({
   selector: 'app-sign-up',
