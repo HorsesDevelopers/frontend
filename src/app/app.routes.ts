@@ -7,10 +7,12 @@ import { CreateAlertComponent } from './communication/create-alert/create-alert.
 import {PondDetailViewComponent} from './feeding/pages/pond-detail-view/pond-detail-view.component';
 import {PondsViewComponent} from './feeding/pages/ponds-view/ponds-view.component';
 import {ScheduleViewComponent} from './schedule/pages/schedule-view/schedule-view.component';
+import {CreateScheduleComponent} from './schedule/components/create-schedule/create-schedule.component';
 export const routes: Routes = [
   { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
   { path: 'communication', component: CommunicationComponent },
   { path: 'schedule', component: ScheduleViewComponent },
+  { path: 'schedule/new', component: CreateScheduleComponent },
   { path: 'create-alert', component: CreateAlertComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent},
