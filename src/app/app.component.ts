@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
-import {PondsViewComponent} from './feeding/pages/ponds-view/ponds-view.component';
-import {RouterOutlet} from '@angular/router';
-import { AuthenticationSectionComponent } from "./iam/components/authentication-section/authentication-section.component";
+import {RouterLink, RouterOutlet} from '@angular/router';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListItem, MatNavList} from '@angular/material/list';
 
 @Component({
   selector: 'app-root',
-  imports: [PondsViewComponent, RouterOutlet, AuthenticationSectionComponent],
+  imports: [
+    RouterOutlet,
+    MatSidenavModule,
+    MatNavList,
+    MatListItem,
+    RouterLink
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,2 +1,15 @@
-
-<router-outlet></router-outlet>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <div class="sidenav">
+      <mat-nav-list class="list">
+        <a routerLink="/sign-in">Iniciar Sesión</a>
+        <a routerLink="/sign-up">Registrarse</a>
+        <a routerLink="/communication">Comunicación</a>
+        <a routerLink="/ponds">Estanques</a>
+      </mat-nav-list>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
