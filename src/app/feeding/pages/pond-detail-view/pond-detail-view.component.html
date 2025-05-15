@@ -39,8 +39,82 @@
 
       </div>
     </mat-tab>
-    <mat-tab label="Mi Fish"></mat-tab>
+    <mat-tab label="Mi Fish">
+      <div class="pond-detail-content fish-tab-content">
+        <div class="fish-header">
+          <button mat-fab color="primary" class="add-fish-btn">
+            <span style="font-size: 2rem;">+</span>
+          </button>
+        </div>
+
+        <div class="fish-summary-container">
+          <h3>Summary by Type</h3>
+          <div class="fish-summary">
+            <ng-container *ngFor="let type of fishTypes">
+              <div class="fish-type-summary">
+                <span class="fish-type">{{ type }}</span>
+                <span class="fish-count">{{ pondDetailData.fishPerTypeQuantity[type] }}</span>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <h3>Detailed Fish Records</h3>
+          <table class="fish-table">
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>Type</th>
+              <th>Quantity</th>
+              <th>Joined At</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let fish of pondDetailData.fish">
+              <td>{{ fish.id }}</td>
+              <td>{{ fish.type }}</td>
+              <td>{{ fish.quantity }}</td>
+              <td>{{ fish.joinedAt }}</td>
+            </tr>
+            <tr *ngIf="pondDetailData.fish.length === 0">
+              <td colspan="4" class="no-data">No fish records available</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </mat-tab>
     <mat-tab label="Sensors"></mat-tab>
-    <mat-tab label="Food"></mat-tab>
+    <mat-tab label="Food">
+      <div class="pond-detail-content food-tab-content">
+
+        <div class="table-container">
+          <table class="food-table">
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Brand</th>
+              <th>Quantity (kg)</th>
+              <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let food of pondDetailData.food">
+              <td>{{ food.id }}</td>
+              <td>{{ food.name }}</td>
+              <td>{{ food.brand }}</td>
+              <td>{{ food.quantity }}</td>
+              <td>{{ food.date }}</td>
+            </tr>
+            <tr *ngIf="pondDetailData.food.length === 0">
+              <td colspan="4" class="no-data">No food records available</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </mat-tab>
   </mat-tab-group>
 </div>

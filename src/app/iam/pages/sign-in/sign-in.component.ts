@@ -13,7 +13,6 @@ import {RouterLink} from '@angular/router';
   selector: 'app-sign-in',
   standalone: true,
   imports: [
-    MatFormField,
     ReactiveFormsModule,
     MatInput,
     MatError,

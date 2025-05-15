@@ -9,7 +9,6 @@ import {MatListItem, MatNavList} from '@angular/material/list';
     RouterOutlet,
     MatSidenavModule,
     MatNavList,
-    MatListItem,
     RouterLink
   ],
   templateUrl: './app.component.html',

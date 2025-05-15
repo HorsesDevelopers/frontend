@@ -17,7 +17,7 @@ export const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent},
   { path: 'ponds', component: PondsViewComponent },
-  { path: 'ponds/id', component: PondDetailViewComponent },
-  { path: '**', component: PondsViewComponent}
+  //{ path: '**', component: PondsViewComponent},
+  { path: 'pond-detail/:id', component: PondDetailViewComponent }
   ];
 

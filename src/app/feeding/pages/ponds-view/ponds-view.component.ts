@@ -1,16 +1,16 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {MatButton} from '@angular/material/button';
-import {NgForOf, NgIf} from '@angular/common';
-import {Pond} from '../../model/pond.entity';
-import {MatTableDataSource} from '@angular/material/table';
-import {PondsCardComponent} from '../../components/ponds-card/ponds-card.component';
-import {PondService} from '../../service/pond.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MatButton } from '@angular/material/button';
+import { NgForOf, NgIf } from '@angular/common';
+import { Pond } from '../../model/pond.entity';
+import { MatTableDataSource } from '@angular/material/table';
+import { PondsCardComponent } from '../../components/ponds-card/ponds-card.component';
+import { PondService } from '../../service/pond.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-ponds-view',
   imports: [
-    MatButton,
-    NgIf,
     NgForOf,
     PondsCardComponent
   ],
@@ -18,23 +18,29 @@ import {PondService} from '../../service/pond.service';
   styleUrl: './ponds-view.component.css'
 })
 export class PondsViewComponent implements OnInit {
-  protected pondData!: Pond;
   protected dataSource: MatTableDataSource<Pond> = new MatTableDataSource<Pond>();
-  private pondService: PondService = inject(PondService);
 
-  constructor() {
-    this.pondData = new Pond({});
-    this.dataSource = new MatTableDataSource();
-    console.log(this.pondService);
-  }
+  constructor(private pondService: PondService, private router: Router) {}
 
   ngOnInit(): void {
-    this.getAllPond();
+    this.loadPonds();
   }
 
-  private getAllPond() {
-    this.pondService.getAll().subscribe((response: Pond[]) => {
-      this.dataSource.data = response;
+  private loadPonds(): void {
+    this.pondService.getAll().subscribe({
+      next: (ponds: Pond[]) => {
+        this.dataSource.data = ponds;
+      },
+      error: (err: HttpErrorResponse) => {
+        console.error('Error fetching ponds:', err);
+      }
     });
+  }
+
+  navigateToDetail(pondId: number): void {
+    console.log('Navigating to pond detail with ID:', pondId);
+    if (pondId === 1) {
+      this.router.navigate(['/pond-detail', pondId]);
+    }
   }
 }

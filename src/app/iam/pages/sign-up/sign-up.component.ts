@@ -12,14 +12,10 @@ import {MatOption, MatSelect} from '@angular/material/select';
   selector: 'app-sign-up',
   standalone: true,
   imports: [
-    MatFormField,
     ReactiveFormsModule,
     MatInput,
     MatError,
-    NgIf,
-    MatSelect,
-    MatOption,
-    MatLabel
+    NgIf
   ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'
