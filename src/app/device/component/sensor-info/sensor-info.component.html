@@ -1,3 +1,26 @@
-<div class="sensor-info">
-
+<div class="sensor-info-area">
+  <h1>River Pond</h1>
+  <div class="sensor-info-container">
+    <h2>Water Quality</h2>
+    <div class="sensor-info" *ngIf="sensor">
+      <div class="sensor-info-item">
+        Temp:
+        <div class="circle blue">
+          <span> {{ sensor.temperature }}</span>
+        </div>
+      </div>
+      <div class="sensor-info-item">
+        Oxígeno:
+        <div class="circle blue">
+          <span> {{ sensor.oxygen }}</span>
+        </div>
+      </div>
+      <div class="sensor-info-item">
+        ph:
+        <div class="circle blue">
+          <span>{{ sensor.nytrogen }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

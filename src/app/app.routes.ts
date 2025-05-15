@@ -2,8 +2,8 @@ import { Routes } from '@angular/router';
 import {authenticationGuard} from "./iam/services/authentication.guard";
 import {SignInComponent} from "./iam/pages/sign-in/sign-in.component";
 import {SignUpComponent} from "./iam/pages/sign-up/sign-up.component";
-import { CommunicationComponent } from './communication/communication.component';
-import { CreateAlertComponent } from './communication/create-alert/create-alert.component';
+import { CommunicationComponent } from './communication/pages/communication/communication.component';
+import { CreateAlertComponent } from './communication/component/create-alert/create-alert.component';
 import {PondDetailViewComponent} from './feeding/pages/pond-detail-view/pond-detail-view.component';
 import {PondsViewComponent} from './feeding/pages/ponds-view/ponds-view.component';
 import {ScheduleViewComponent} from './schedule/pages/schedule-view/schedule-view.component';
@@ -11,10 +11,12 @@ import {CreateScheduleComponent} from './schedule/components/create-schedule/cre
 import {SchedulePendingComponent} from './schedule/components/schedule-pending/schedule-pending.component';
 import {DevicePageComponent} from './device/pages/device-page/device-page.component';
 import {AddDeviceComponent} from './device/pages/add-device/add-device.component';
+import {HomeComponent} from './iam/pages/home/home.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
   { path: 'communication', component: CommunicationComponent },
+  { path: 'home', component: HomeComponent},
   { path: 'schedule', component: ScheduleViewComponent },
   { path: 'schedule/new', component: CreateScheduleComponent },
   { path: 'schedule/pending', component: SchedulePendingComponent },

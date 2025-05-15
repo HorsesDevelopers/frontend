@@ -1,1 +1,12 @@
-<p>home works!</p>
+<div class="home">
+  <div class="home-container">
+    <div class="pond-info">
+      <app-sensor-info [sensorId]="selectedSensorId"></app-sensor-info>
+      <ul>
+        <li *ngFor="let sensor of sensors" (click)="selectSensor(sensor.id)" style="cursor:pointer">
+          {{ sensor.id }} - {{ sensor.status }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
