@@ -4,12 +4,14 @@ import { DispenserService } from '../../service/dispenser.service';
 import { Sensor } from '../../model/sensor';
 import { Dispenser } from '../../model/dispenser';
 import {NgForOf} from '@angular/common';
+import {MatButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-device-page',
   templateUrl: './device-page.component.html',
   imports: [
-    NgForOf
+    NgForOf,
+    MatButton
   ],
   styleUrl: './device-page.component.css'
 })
