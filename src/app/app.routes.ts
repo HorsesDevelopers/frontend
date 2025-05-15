@@ -8,6 +8,8 @@ import {PondDetailViewComponent} from './feeding/pages/pond-detail-view/pond-det
 import {PondsViewComponent} from './feeding/pages/ponds-view/ponds-view.component';
 import {ScheduleViewComponent} from './schedule/pages/schedule-view/schedule-view.component';
 import {CreateScheduleComponent} from './schedule/components/create-schedule/create-schedule.component';
+import {CreateSensorComponent} from './feeding/pages/create-sensor/create-sensor.component';
+import {CreateFoodComponent} from './feeding/pages/create-food/create-food.component';
 export const routes: Routes = [
   { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
   { path: 'communication', component: CommunicationComponent },
@@ -18,6 +20,9 @@ export const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent},
   { path: 'ponds', component: PondsViewComponent },
   //{ path: '**', component: PondsViewComponent},
-  { path: 'pond-detail/:id', component: PondDetailViewComponent }
-  ];
+  { path: 'pond-detail/:id', component: PondDetailViewComponent },
+  { path: 'sensors/create', component: CreateSensorComponent },
+  { path: 'foods/create', component: CreateFoodComponent },
+
+];
 

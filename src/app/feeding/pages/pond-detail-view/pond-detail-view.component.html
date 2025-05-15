@@ -88,11 +88,10 @@
     <mat-tab label="Sensors">
       <div class="pond-detail-content sensors-tab-content">
         <div class="sensor-header">
-          <button mat-fab color="primary" class="create-sensor-btn">
+          <button mat-fab color="primary" class="create-sensor-btn" (click)="navigateToCreateSensor()">
             <span>Create sensor</span>
           </button>
         </div>
-
         <div class="table-container">
           <table class="sensors-table">
             <thead>
@@ -126,7 +125,11 @@
     </mat-tab>
     <mat-tab label="Food">
       <div class="pond-detail-content food-tab-content">
-
+        <div class="food-header">
+          <button mat-fab color="primary" class="add-food-btn" (click)="navigateToCreateFood()">
+            <span>Create food</span>
+          </button>
+        </div>
         <div class="table-container">
           <table class="food-table">
             <thead>

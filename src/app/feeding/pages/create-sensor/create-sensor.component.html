@@ -1,0 +1,31 @@
+<div class="create-sensor-container">
+  <h1 class="create-sensor-title">Create Sensor</h1>
+
+  <div class="form-group">
+    <label for="pondName">Pond Name</label>
+    <select id="pondName" class="pond-select" [(ngModel)]="newSensor.pond_id">
+      <option [ngValue]="null">Select a pond</option>
+      <option *ngFor="let pond of ponds" [ngValue]="pond.id">{{ pond.name }}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="oxygenLevel">Oxygen level</label>
+    <input type="number" id="oxygenLevel" class="input-field" [(ngModel)]="newSensor.oxygen">
+  </div>
+
+  <div class="form-group">
+    <label for="nitrogenLevel">Nytrogen level</label>
+    <input type="number" id="nitrogenLevel" class="input-field" [(ngModel)]="newSensor.nytrogen">
+  </div>
+
+  <div class="form-group">
+    <label for="temperatureLevel">Temperature level</label>
+    <input type="text" id="temperatureLevel" class="input-field" [(ngModel)]="newSensor.temperature">
+  </div>
+
+  <div class="button-group">
+    <button class="create-btn" (click)="createSensor()">Create</button>
+    <button class="cancel-btn" (click)="cancel()">Cancel</button>
+  </div>
+</div>

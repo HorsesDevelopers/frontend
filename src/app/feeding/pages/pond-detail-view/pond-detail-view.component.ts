@@ -1,5 +1,5 @@
 import {Component, inject, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {PondDetail} from '../../interfaces/pondDetail';
 import {PondDetailService} from '../../service/pond-detail.service';
 import {MatTableDataSource} from '@angular/material/table';
@@ -11,6 +11,7 @@ import {NgClass, NgForOf, NgIf} from '@angular/common';
 import {MatFabButton} from '@angular/material/button';
 import {Sensor} from '../../interfaces/Sensor';
 import {SensorService} from '../../service/sensor.service';
+
 
 @Component({
   selector: 'app-pond-detail-view',
@@ -29,6 +30,7 @@ export class PondDetailViewComponent implements OnInit {
   private pondDetailService: PondDetailService = inject(PondDetailService);
   private sensorService: SensorService = inject(SensorService);
   private route: ActivatedRoute = inject(ActivatedRoute);
+  private router: Router = inject(Router);
   fishTypes: string[] = [];
   pondId!: number;
 
@@ -59,9 +61,14 @@ export class PondDetailViewComponent implements OnInit {
   }
   private getAllSensors() {
     this.sensorService.getAll().subscribe((response: Sensor[]) => {
-      // Filter sensors that belong to the current pond
       this.sensorsData = response.filter(sensor => sensor.pond_id === this.pondId);
       console.log('sensors for pond', this.sensorsData);
     });
+  }
+  navigateToCreateSensor() {
+    this.router.navigate(['/sensors/create']);
+  }
+  navigateToCreateFood() {
+    this.router.navigate(['/foods/create', { pondId: this.pondId }]);
   }
 }

@@ -1,0 +1,31 @@
+<div class="create-food-container">
+  <h1 class="create-food-title">New food</h1>
+
+  <div class="form-group">
+    <label for="foodName">Food name</label>
+    <input type="text" id="foodName" class="input-field">
+  </div>
+
+  <div class="form-group">
+    <label for="brand">Brand</label>
+    <input type="text" id="brand" class="input-field">
+  </div>
+
+  <div class="form-group">
+    <label for="quantity">Quantity (gr)</label>
+    <input type="number" id="quantity" class="quantity-input">
+  </div>
+
+  <div class="form-group">
+    <label for="pondId">Select Pond</label>
+    <select id="pondId" class="pond-select">
+      <option [ngValue]="null">Select a pond</option>
+      <option *ngFor="let pond of ponds" [ngValue]="pond.id">{{ pond.name }}</option>
+    </select>
+  </div>
+
+  <div class="button-group">
+    <button class="create-btn">Create</button>
+    <button class="cancel-btn" >Cancel</button>
+  </div>
+</div>

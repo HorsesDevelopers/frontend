@@ -169,7 +169,6 @@
     padding: 10px 12px;
   }
 }
-/* Sensors Tab Styles */
 .sensors-tab-content {
   display: flex;
   flex-direction: column;
@@ -254,7 +253,6 @@
   font-style: italic;
 }
 
-/* Food Tab Styles */
 .food-tab-content {
   display: flex;
   flex-direction: column;
@@ -278,6 +276,7 @@
 .add-food-btn {
   background-color: #377BFF;
 }
+
 
 .food-search-container {
   margin-bottom: 24px;
@@ -326,7 +325,18 @@
 .food-table tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
-
+.add-food-btn {
+  background-color: #377BFF;
+  color: white;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  height: 65px;
+  width: 193px;
+  line-height: 20px;
+  padding: 0 15px;
+  border-radius: 0;
+}
 .food-table tbody tr:hover {
   background-color: #f1f1f1;
 }
