@@ -3,14 +3,16 @@ import {SchedulePendingService} from '../../service/schedule-pending.service';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {lastValueFrom} from 'rxjs';
-import {PendingSchedule} from '../../interfaces/pending-schedule.interface';
+import {Pending, PendingSchedule} from '../../interfaces/pending-schedule.interface';
 import {NgForOf, NgIf} from '@angular/common';
+import {EditPendingScheduleComponent} from '../edit-pending-schedule/edit-pending-schedule.component';
 
 @Component({
   selector: 'app-schedule-pending',
   imports: [
     NgIf,
-    NgForOf
+    NgForOf,
+    EditPendingScheduleComponent
   ],
   templateUrl: './schedule-pending.component.html',
   styleUrl: './schedule-pending.component.css'
@@ -24,12 +26,13 @@ export class SchedulePendingComponent implements OnInit {
   };
   private schedulePendingService: SchedulePendingService = inject(SchedulePendingService);
   isLoading: boolean = false;
+  showEditPopUp: boolean = false;
+  selectedPending: Pending | null = null
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.getSchedulePending().then();
-
   }
 
   async getSchedulePending() {
@@ -50,6 +53,25 @@ export class SchedulePendingComponent implements OnInit {
     if (!staffId) return '--';
     const staff = this.schedulePendingData.staff.find(s => s.id === staffId);
     return staff ? staff.name : '--';
+  }
+
+  public openEditPopup(pending: Pending) {
+    this.selectedPending = pending;
+    this.showEditPopUp = true;
+  }
+
+  public closeEditPopup(): void {
+    this.showEditPopUp = false;
+    this.selectedPending = null;
+  }
+
+  public updatePending(updatedPending: Pending) {
+
+    const index = this.schedulePendingData.pendings.findIndex(p => p.id === updatedPending.id);
+    if (index !== -1) {
+      this.schedulePendingData.pendings[index] = updatedPending;
+    }
+    this.closeEditPopup();
   }
 
   goBack() {

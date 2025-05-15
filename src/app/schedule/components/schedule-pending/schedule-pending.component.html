@@ -3,7 +3,10 @@
     <h1 class="section-title">Pendings</h1>
 
     <div class="pending-items" *ngIf="!isLoading">
-      <div *ngFor="let pending of schedulePendingData.pendings" class="pending-item" [class.selected]="pending.id === 1">
+      <div *ngFor="let pending of schedulePendingData.pendings"
+           class="pending-item"
+           [class.selected]="pending.id === selectedPending?.id"
+           (click)="openEditPopup(pending)">
         <div class="status-indicator" [style.background-color]="pending.alertColor"></div>
         <div class="description">{{ pending.description }}</div>
         <div class="staff-assigned">{{ getStaffName(pending.staffId) }}</div>
@@ -18,7 +21,8 @@
     <div class="staff-items" *ngIf="!isLoading">
       <div *ngFor="let staffMember of schedulePendingData.staff" class="staff-item">
         <div class="staff-name">{{ staffMember.name }}</div>
-        <div class="staff-activity" [class.status-free]="staffMember.status === 'Free'"
+        <div class="staff-activity"
+             [class.status-free]="staffMember.status === 'Free'"
              [class.status-busy]="staffMember.status === 'Finishing Task'"
              [class.status-break]="staffMember.status === 'Break'">
           {{ staffMember.status }}
@@ -29,4 +33,12 @@
       </div>
     </div>
   </div>
+
+  <app-edit-pending-schedule
+    *ngIf="showEditPopUp && selectedPending"
+    [pending]="selectedPending"
+    [staffList]="schedulePendingData.staff"
+    (closePopup)="closeEditPopup()"
+    (savePending)="updatePending($event)"
+  />
 </div>
