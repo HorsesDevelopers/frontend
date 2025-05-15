@@ -43,6 +43,10 @@ export class ScheduleViewComponent implements OnInit {
     this.router.navigate(['/schedule/new']).then();
   }
 
+  protected goToPending() {
+    this.router.navigate(['/schedule/pending']).then();
+  }
+
 
 
 }
