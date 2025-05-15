@@ -6,6 +6,7 @@ import {SignUpRequest} from "../../model/sign-up.request";
 import {MatError, MatFormField} from "@angular/material/form-field";
 import {MatInput, MatLabel} from "@angular/material/input";
 import {NgIf} from "@angular/common";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -24,7 +25,9 @@ export class SignUpComponent extends BaseFormComponent implements OnInit {
   form!: FormGroup;
   submitted = false;
 
-  constructor(private builder: FormBuilder, private authenticationService: AuthenticationService) {
+  constructor(private builder: FormBuilder,
+              private router: Router,
+              private authenticationService: AuthenticationService) {
     super();
   }
 
@@ -43,5 +46,13 @@ export class SignUpComponent extends BaseFormComponent implements OnInit {
     const signUpRequest = new SignUpRequest(username, password);
     this.authenticationService.signUp(signUpRequest);
     this.submitted = true;
+  }
+
+  goToHome() {
+    this.router.navigate(['/home']);
+  }
+
+  goToSignIn() {
+    this.router.navigate(['/sign-in']);
   }
 }

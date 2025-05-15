@@ -6,7 +6,7 @@
 .sidenav {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 250px;
   background-color: #2C2F33;
@@ -32,4 +32,33 @@
 .content {
   background-color: #FAFAFA;
   flex: 1;
+}
+.logo-container{
+
+}
+
+.logo{
+  width: 100px;
+  height: auto;
+}
+
+.log-out-button{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #FF0000;
+  color: #FFFFFF;
+  border: none;
+  width: 90%;
+  height: 40px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.log-out-button:hover {
+  opacity: 0.7;
 }

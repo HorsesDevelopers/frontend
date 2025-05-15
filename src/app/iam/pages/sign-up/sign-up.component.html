@@ -20,14 +20,14 @@
             </select>
             <mat-error *ngIf="isInvalidControl(form, 'role')">{{ errorMessagesForControl(form, 'role') }}</mat-error>
           </div>
-          <button class="button">Create account</button>
+          <button class="button" (click)="goToHome()">Create account</button>
         </form>
       </div>
     </div>
     <div class="divider"></div>
     <div class="sign-in-CTA-container">
       <p>Already have and account?</p>
-      <button class="button" >Sign In</button>
+      <button class="button" (click)="goToSignIn()">Sign In</button>
     </div>
   </div>
 </div>

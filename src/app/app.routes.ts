@@ -14,6 +14,7 @@ import {SchedulePendingComponent} from './schedule/components/schedule-pending/s
 import {DevicePageComponent} from './device/pages/device-page/device-page.component';
 import {AddDeviceComponent} from './device/pages/add-device/add-device.component';
 import {HomeComponent} from './iam/pages/home/home.component';
+import {PageNotFoundComponent} from './shared/page/page-not-found/page-not-found.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
@@ -28,10 +29,10 @@ export const routes: Routes = [
   { path: 'devices', component: DevicePageComponent},
   { path: 'add-devices', component: AddDeviceComponent},
   { path: 'ponds', component: PondsViewComponent },
-  //{ path: '**', component: PondsViewComponent},
   { path: 'pond-detail/:id', component: PondDetailViewComponent },
   { path: 'sensors/create', component: CreateSensorComponent },
   { path: 'foods/create', component: CreateFoodComponent },
+  { path: '**', component: PageNotFoundComponent},
 
 ];
 

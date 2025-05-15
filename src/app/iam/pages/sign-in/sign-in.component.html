@@ -15,14 +15,14 @@
           <div class="forgot-password">
             <a routerLink="/iam/forgot-password">Forgot password?</a>
           </div>
-          <button class="button">Sign In</button>
+          <button class="button" (click)="goToHome()" >Sign In</button>
         </form>
       </div>
     </div>
     <div class="divider"></div>
     <div class="sign-in-CTA-container">
       <p>New account?</p>
-      <button class="button" >Sign Up</button>
+      <button class="button" (click)="goToSignUp()">Sign Up</button>
     </div>
   </div>
 </div>
