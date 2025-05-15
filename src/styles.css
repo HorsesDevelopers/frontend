@@ -8,3 +8,47 @@ body {
 }
 html, body { height: 100%; }
 
+.box-input{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.input-text{
+  border-radius: 20px;
+  background: transparent;
+  outline: none;
+  font-size: 15px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.button{
+  background: #D9D9D9;
+  color: #000000;
+  border-radius: 5px;
+  padding: 20px 40px;
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover{
+  background: #B0B0B0;
+}
+.button-add{
+  opacity: 50%;
+  background-color: #F93B3B;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 40%;
+}
+
+.button-add:hover{
+  opacity: 40%;
+}

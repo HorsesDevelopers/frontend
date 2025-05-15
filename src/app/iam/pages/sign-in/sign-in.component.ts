@@ -3,9 +3,8 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 import {AuthenticationService} from "../../services/authentication.service";
 import {BaseFormComponent} from "../../../shared/components/base-form.component";
 import {SignInRequest} from "../../model/sign-in.request";
-import {MatError, MatFormField} from "@angular/material/form-field";
+import {MatError } from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
-import {MatButton} from "@angular/material/button";
 import {NgIf} from "@angular/common";
 import {RouterLink} from '@angular/router';
 
@@ -13,7 +12,6 @@ import {RouterLink} from '@angular/router';
   selector: 'app-sign-in',
   standalone: true,
   imports: [
-    MatFormField,
     ReactiveFormsModule,
     MatInput,
     MatError,

@@ -8,6 +8,7 @@ import {PondDetailViewComponent} from './feeding/pages/pond-detail-view/pond-det
 import {PondsViewComponent} from './feeding/pages/ponds-view/ponds-view.component';
 import {ScheduleViewComponent} from './schedule/pages/schedule-view/schedule-view.component';
 import {DevicePageComponent} from './device/pages/device-page/device-page.component';
+import {AddDeviceComponent} from './device/pages/add-device/add-device.component';
 export const routes: Routes = [
   { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
   { path: 'communication', component: CommunicationComponent },
@@ -16,6 +17,7 @@ export const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent},
   { path: 'devices', component: DevicePageComponent},
+  { path: 'add-devices', component: AddDeviceComponent},
   { path: 'ponds', component: PondsViewComponent },
   { path: 'ponds/id', component: PondDetailViewComponent },
   { path: '**', component: PondsViewComponent}
