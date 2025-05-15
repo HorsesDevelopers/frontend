@@ -1,0 +1,23 @@
+<div class="schedule-main-container">
+  <h1 class="page-title">My Schedules</h1>
+
+  <div class="schedules-container">
+    <h2 class="feeding-schedules">Feeding Schedules</h2>
+
+    <div class="search-container">
+      <input type="text" placeholder="Search" [(ngModel)]="searchText" class="search-input">
+      <div class="search-icon"><span class="material-symbols-outlined">search</span></div>
+    </div>
+
+    <div class="schedules-list">
+      <div class="schedule-item" *ngFor="let schedule of dataSource.data; let i = index">
+        <div class="pond-name">Pond: {{ schedule.pondName }}</div>
+        <div class="food-type">{{ schedule.food }}</div>
+        <div class="size">Size: {{ schedule.size }} cm</div>
+        <div class="status">Status: {{ schedule.status }}</div>
+        <div><span class="material-symbols-outlined">edit_square</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
