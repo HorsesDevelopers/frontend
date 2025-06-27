@@ -51,7 +51,7 @@ export class PondDetailViewComponent implements OnInit {
 
   getSensors() {
     this.sensorService.getAll().subscribe((response: Sensor[]) => {
-      this.sensorsData = response.filter(sensor => sensor.pond_id === this.pondId);
+      this.sensorsData = response.filter(sensor => sensor.id === this.pondId);
     });
   }
 

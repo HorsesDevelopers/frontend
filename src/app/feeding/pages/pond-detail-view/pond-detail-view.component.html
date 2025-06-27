@@ -78,26 +78,28 @@
                   <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Oxígeno</th>
-                    <th>Nitrógeno</th>
-                    <th>Temperatura</th>
-                    <th>Estado</th>
+                    <th>Oxygen Level</th>
+                    <th>Sensor Type</th>
+                    <th>Status</th>
+                    <th>Temperature Level</th>
+                    <th>Last Update</th>
                   </tr>
                   </thead>
                   <tbody>
                   <tr *ngFor="let sensor of sensorsData">
                     <td>{{ sensor.id }}</td>
-                    <td>{{ sensor.oxygen }}</td>
-                    <td>{{ sensor.nytrogen }}</td>
-                    <td>{{ sensor.temperature }}</td>
+                    <td>{{ sensor.oxygenLevel }}</td>
+                    <td>{{ sensor.sensorType }}</td>
                     <td>
                       <div class="status-indicator" [ngClass]="sensor.status === 'Connected' ? 'connected' : 'disconnected'">
                         {{ sensor.status }}
                       </div>
                     </td>
+                    <td>{{ sensor.temperatureLevel }}</td>
+                    <td>{{ sensor.last_update }}</td>
                   </tr>
                   <tr *ngIf="!sensorsData || sensorsData.length === 0">
-                    <td colspan="5" class="no-data">No hay sensores asociados a este estanque.</td>
+                    <td colspan="6" class="no-data">No hay sensores asociados a este estanque.</td>
                   </tr>
                   </tbody>
                 </table>

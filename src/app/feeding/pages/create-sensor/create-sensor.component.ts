@@ -23,11 +23,11 @@ export class CreateSensorComponent implements OnInit {
   ponds: PondDetail[] = [];
   newSensor: Sensor = {
     id: 0,
-    pond_id: null,
-    oxygen: 0,
-    nytrogen: 0,
-    temperature: '',
-    status: 'Connected'
+    status: 'Connected',
+    oxygenLevel: 0,
+    sensorType: '',
+    temperatureLevel: 0,
+    last_update: ''
   };
 
   ngOnInit() {
@@ -41,7 +41,7 @@ export class CreateSensorComponent implements OnInit {
   }
 
   createSensor() {
-    if (!this.newSensor.pond_id) {
+    if (!this.newSensor.id) {
       alert('Please select a pond');
       return;
     }
@@ -49,7 +49,7 @@ export class CreateSensorComponent implements OnInit {
     this.sensorService.create(this.newSensor).subscribe(
       response => {
         console.log('Sensor created successfully', response);
-        this.router.navigate(['/ponds', this.newSensor.pond_id]);
+        this.router.navigate(['/ponds', this.newSensor.id]);
       },
       error => {
         console.error('Error creating sensor', error);

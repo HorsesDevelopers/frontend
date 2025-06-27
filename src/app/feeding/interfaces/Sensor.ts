@@ -1,8 +1,8 @@
 export interface Sensor {
   id: number;
-  pond_id: number | null;
-  oxygen: number;
-  nytrogen: number;
-  temperature: string;
+  oxygenLevel: number;
+  sensorType: string;
   status: string;
+  temperatureLevel: number;
+  last_update: string;
 }
