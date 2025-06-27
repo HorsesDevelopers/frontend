@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PondDetail } from '../../interfaces/pondDetail';
-import { PondDetailService } from '../../service/pond-detail.service';
+import { Pond } from '../../model/pond.entity';
+import { PondService } from '../../service/pond.service';
 import { Sensor } from '../../interfaces/Sensor';
 import { SensorService } from '../../service/sensor.service';
-import {MatTab, MatTabGroup} from '@angular/material/tabs';
-import {MatFabButton} from '@angular/material/button';
-import {NgClass, NgForOf, NgIf} from '@angular/common';
+import { MatTab, MatTabGroup } from '@angular/material/tabs';
+import { MatFabButton } from '@angular/material/button';
+import { NgClass, NgForOf, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-pond-detail-view',
@@ -22,17 +22,17 @@ import {NgClass, NgForOf, NgIf} from '@angular/common';
   styleUrl: './pond-detail-view.component.css'
 })
 export class PondDetailViewComponent implements OnInit {
-  pondDetailData?: PondDetail;
+  pondDetailData?: Pond;
   sensorsData: Sensor[] = [];
-  fishTypes: string[] = [];
   pondId: number = 0;
 
   constructor(
-    private pondDetailService: PondDetailService,
+    private pondService: PondService,
     private sensorService: SensorService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     const idParam = this.route.snapshot.paramMap.get('id');
@@ -44,9 +44,8 @@ export class PondDetailViewComponent implements OnInit {
   }
 
   getPondDetail() {
-    this.pondDetailService.getById(this.pondId).subscribe((response: PondDetail) => {
+    this.pondService.getById(this.pondId.toString()).subscribe((response: Pond) => {
       this.pondDetailData = response;
-      this.fishTypes = Object.keys(response.fishPerTypeQuantity || {});
     });
   }
 
@@ -54,6 +53,10 @@ export class PondDetailViewComponent implements OnInit {
     this.sensorService.getAll().subscribe((response: Sensor[]) => {
       this.sensorsData = response.filter(sensor => sensor.pond_id === this.pondId);
     });
+  }
+
+  navigateToCreateFish() {
+    this.router.navigate(['/fishes/create'], { queryParams: { pondId: this.pondId } });
   }
 
   navigateToCreateSensor() {
