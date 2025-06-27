@@ -24,7 +24,18 @@ export class ScheduleViewComponent implements OnInit {
   searchText: string = '';
 
   constructor() {
-    this.scheduleData = {food: '', id: 0, pondName: '', size: 0, status: ''};
+    this.scheduleData = {
+      name: '',
+      species: '',
+      size: 0,
+      mass: 0,
+      foodKind: '',
+      foodWeight: 0,
+      loopC: 0,
+      sensorConditionA: '',
+      sensorConditionB: '',
+      comment: ''
+    };
     this.dataSource = new MatTableDataSource();
     console.log(this.scheduleData);
   }

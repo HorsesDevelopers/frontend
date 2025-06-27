@@ -43,4 +43,8 @@ export class PondsViewComponent implements OnInit {
       this.router.navigate(['/pond-detail', pondId]);
     }
   }
+
+  navigateToCreate(): void {
+    this.router.navigate(['/create-pond']);
+  }
 }

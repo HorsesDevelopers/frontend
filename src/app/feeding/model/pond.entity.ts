@@ -1,15 +1,24 @@
 export class Pond {
   id: number;
   name: string;
-  sensorQuantity: number;
-  fishQuantity: number;
-  imageUrl: string;
+  ubication: string;
+  waterType: string;
+  volume: number;
+  area: number;
 
-  constructor(pond:{id?: number, name?: string, sensorQuantity?: number, fishQuantity?: number, imageUrl?: string}) {
-    this.id = pond.id || 0;
-    this.name = pond.name || '';
-    this.sensorQuantity = pond.sensorQuantity || 0;
-    this.fishQuantity = pond.fishQuantity || 0;
-    this.imageUrl = pond.imageUrl || '';
+  constructor(
+    id: number,
+    name: string,
+    ubication: string,
+    waterType: string,
+    volume: number,
+    area: number
+  ) {
+    this.id = id;
+    this.name = name;
+    this.ubication = ubication;
+    this.waterType = waterType;
+    this.volume = volume;
+    this.area = area;
   }
 }

@@ -1,12 +1,9 @@
 <a [routerLink]="['/pond-detail', pond.id]" style="text-decoration: none;">
 <mat-card class="pond-card">
-  <div class="pond-image">
-    <img [src]="pond.imageUrl" alt="{{pond.name}} image">
-  </div>
   <mat-card-content class="pond-details">
     <h2>{{pond.name}}</h2>
-    <p>Sensors: {{pond.sensorQuantity}}</p>
-    <p>Fish: {{pond.fishQuantity}}</p>
+    <p>Sensors: {{pond.name}}</p>
+    <p>Fish: {{pond.ubication}}</p>
   </mat-card-content>
 </mat-card>
 </a>

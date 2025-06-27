@@ -15,6 +15,7 @@ import {DevicePageComponent} from './device/pages/device-page/device-page.compon
 import {AddDeviceComponent} from './device/pages/add-device/add-device.component';
 import {HomeComponent} from './iam/pages/home/home.component';
 import {PageNotFoundComponent} from './public/pages/page-not-found/page-not-found.component';
+import { CreatePondComponent } from './feeding/pages/create-pond/create-pond.component';
 
 
 export const routes: Routes = [
@@ -22,8 +23,8 @@ export const routes: Routes = [
   { path: 'communication', component: CommunicationComponent },
   { path: 'home', component: HomeComponent},
   { path: 'schedule', component: ScheduleViewComponent },
-  { path: 'schedule/new', component: CreateScheduleComponent },
-  { path: 'schedule/pending', component: SchedulePendingComponent },
+  { path: 'schedule/new', component: CreateScheduleComponent, canActivate: [authenticationGuard] },
+  { path: 'schedule/pending', component: SchedulePendingComponent, canActivate: [authenticationGuard] },
   { path: 'create-alert', component: CreateAlertComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent},
@@ -33,7 +34,7 @@ export const routes: Routes = [
   { path: 'pond-detail/:id', component: PondDetailViewComponent },
   { path: 'sensors/create', component: CreateSensorComponent },
   { path: 'foods/create', component: CreateFoodComponent },
+  { path: 'create-pond', component: CreatePondComponent },
   { path: '**', component: PageNotFoundComponent},
 
 ];
-

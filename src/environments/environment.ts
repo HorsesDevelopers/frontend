@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serverBasePath: 'https://my-json-server.typicode.com/HorsesDevelopers/fake-api'
+  serverBasePath: 'https://backend-production-5e9e.up.railway.app/api/v1',
 };

@@ -9,6 +9,6 @@ export class PondDetailService extends BaseService<PondDetail>{
 
   constructor() {
     super();
-    this.resourceEndpoint = '/pondDetails';
+    this.resourceEndpoint = '/ponds';
   }
 }

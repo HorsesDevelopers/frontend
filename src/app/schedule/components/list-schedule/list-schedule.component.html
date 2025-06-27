@@ -1,11 +1,12 @@
 <div class="schedule-cards-row">
   <div class="schedule-card" *ngFor="let schedule of schedules">
     <div class="pond-title">
-      {{ schedule.pondName }}
+      {{ schedule.name }}
     </div>
     <div class="food">
-      {{ schedule.food }}
+      {{ schedule.foodKind }}
     </div>
+
     <div class="time">
       in 30 minutes
     </div>

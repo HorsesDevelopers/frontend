@@ -5,157 +5,161 @@
   </div>
   <mat-tab-group>
     <mat-tab label="General">
-      <div class="pond-detail-content">
-        <div class="image-container">
-          <img [src]="dataSource.data[0].imageUrl" alt="image">
+      <div class="pond-detail-container" *ngIf="pondDetailData; else noData">
+        <div class="info-container">
+          <h1>{{ pondDetailData.name }}</h1>
         </div>
-        <div class="info-details">
-          <div class="pond-detail">
-            <div class="label">Pond Id</div>
-            <div> {{ dataSource.data[0].id }} </div>
-          </div>
-          <div class="pond-detail">
-            <div class="label">Location</div>
-            <div> {{ dataSource.data[0].ubication }} </div>
-          </div>
-          <div class="pond-detail">
-            <div class="label">Water Type</div>
-            <div> {{ dataSource.data[0].waterType }} </div>
-          </div>
-          <div class="pond-detail">
-            <div class="label">Pond Volume</div>
-            <div> {{ dataSource.data[0].volume }} </div>
-          </div>
-          <div class="pond-detail">
-            <div class="label">Pond Size</div>
-            <div> {{ dataSource.data[0].size }} </div>
-          </div>
-          <div class="pond-detail">
-            <div class="label">Creation Date</div>
-            <div> {{ dataSource.data[0].createdAt }} </div>
-          </div>
-
-        </div>
-
-      </div>
-    </mat-tab>
-    <mat-tab label="Mi Fish">
-      <div class="pond-detail-content fish-tab-content">
-        <div class="fish-header">
-          <button mat-fab color="primary" class="add-fish-btn">
-            <span style="font-size: 2rem;">+</span>
-          </button>
-        </div>
-
-        <div class="fish-summary-container">
-          <h3>Summary by Type</h3>
-          <div class="fish-summary">
-            <ng-container *ngFor="let type of fishTypes">
-              <div class="fish-type-summary">
-                <span class="fish-type">{{ type }}</span>
-                <span class="fish-count">{{ pondDetailData.fishPerTypeQuantity[type] }}</span>
+        <mat-tab-group>
+          <mat-tab label="General">
+            <div class="pond-detail-content">
+              <div class="image-container" *ngIf="pondDetailData.imageUrl">
+                <img [src]="pondDetailData.imageUrl" alt="image">
               </div>
-            </ng-container>
-          </div>
-        </div>
-
-        <div class="table-container">
-          <h3>Detailed Fish Records</h3>
-          <table class="fish-table">
-            <thead>
-            <tr>
-              <th>ID</th>
-              <th>Type</th>
-              <th>Quantity</th>
-              <th>Joined At</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let fish of pondDetailData.fish">
-              <td>{{ fish.id }}</td>
-              <td>{{ fish.type }}</td>
-              <td>{{ fish.quantity }}</td>
-              <td>{{ fish.joinedAt }}</td>
-            </tr>
-            <tr *ngIf="pondDetailData.fish.length === 0">
-              <td colspan="4" class="no-data">No fish records available</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </mat-tab>
-    <mat-tab label="Sensors">
-      <div class="pond-detail-content sensors-tab-content">
-        <div class="sensor-header">
-          <button mat-fab color="primary" class="create-sensor-btn" (click)="navigateToCreateSensor()">
-            <span>Create sensor</span>
-          </button>
-        </div>
-        <div class="table-container">
-          <table class="sensors-table">
-            <thead>
-            <tr>
-              <th>ID</th>
-              <th>Oxygen</th>
-              <th>Nitrogen</th>
-              <th>Temperature</th>
-              <th>Status</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let sensor of sensorsData">
-              <td>{{ sensor.id }}</td>
-              <td>{{ sensor.oxygen }}</td>
-              <td>{{ sensor.nytrogen }}</td>
-              <td>{{ sensor.temperature }}</td>
-              <td>
-                <div class="status-indicator" [ngClass]="sensor.status === 'Connected' ? 'connected' : 'disconnected'">
-                  {{ sensor.status }}
+              <div class="info-details">
+                <div class="pond-detail">
+                  <div class="label">Pond Id</div>
+                  <div>{{ pondDetailData.id }}</div>
                 </div>
-              </td>
-            </tr>
-            <tr *ngIf="!sensorsData || sensorsData.length === 0">
-              <td colspan="5" class="no-data">No sensor records available</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
+                <div class="pond-detail">
+                  <div class="label">Ubicación</div>
+                  <div>{{ pondDetailData.ubication }}</div>
+                </div>
+                <div class="pond-detail">
+                  <div class="label">Tipo de Agua</div>
+                  <div>{{ pondDetailData.waterType }}</div>
+                </div>
+                <div class="pond-detail">
+                  <div class="label">Volumen</div>
+                  <div>{{ pondDetailData.volume }}</div>
+                </div>
+                <div class="pond-detail" *ngIf="pondDetailData.createdAt">
+                  <div class="label">Fecha de Creación</div>
+                  <div>{{ pondDetailData.createdAt }}</div>
+                </div>
+              </div>
+            </div>
+          </mat-tab>
+          <mat-tab label="Mi Fish">
+            <div class="pond-detail-content fish-tab-content">
+              <div class="fish-header">
+                <button mat-fab color="primary" class="add-fish-btn">
+                  <span style="font-size: 2rem;">+</span>
+                </button>
+              </div>
+              <div class="fish-summary-container">
+                <h3>Summary by Type</h3>
+                <div class="fish-summary">
+                  <ng-container *ngFor="let type of fishTypes">
+                    <div class="fish-type-summary">
+                      <span class="fish-type">{{ type }}</span>
+                      <span class="fish-count">{{ pondDetailData.fishPerTypeQuantity[type] }}</span>
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+              <div class="table-container">
+                <h3>Detailed Fish Records</h3>
+                <table class="fish-table">
+                  <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Type</th>
+                    <th>Quantity</th>
+                    <th>Joined At</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let fish of pondDetailData.fish">
+                    <td>{{ fish.id }}</td>
+                    <td>{{ fish.type }}</td>
+                    <td>{{ fish.quantity }}</td>
+                    <td>{{ fish.joinedAt }}</td>
+                  </tr>
+                  <tr *ngIf="!pondDetailData.fish || pondDetailData.fish.length === 0">
+                    <td colspan="4" class="no-data">No fish records available</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </mat-tab>
+          <mat-tab label="Sensors">
+            <div class="pond-detail-content sensors-tab-content">
+              <div class="sensor-header">
+                <button mat-fab color="primary" class="create-sensor-btn" (click)="navigateToCreateSensor()">
+                  <span>Create sensor</span>
+                </button>
+              </div>
+              <div class="table-container">
+                <table class="sensors-table">
+                  <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Oxygen</th>
+                    <th>Nitrogen</th>
+                    <th>Temperature</th>
+                    <th>Status</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let sensor of sensorsData">
+                    <td>{{ sensor.id }}</td>
+                    <td>{{ sensor.oxygen }}</td>
+                    <td>{{ sensor.nytrogen }}</td>
+                    <td>{{ sensor.temperature }}</td>
+                    <td>
+                      <div class="status-indicator" [ngClass]="sensor.status === 'Connected' ? 'connected' : 'disconnected'">
+                        {{ sensor.status }}
+                      </div>
+                    </td>
+                  </tr>
+                  <tr *ngIf="!sensorsData || sensorsData.length === 0">
+                    <td colspan="5" class="no-data">No sensor records available</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </mat-tab>
+          <mat-tab label="Food">
+            <div class="pond-detail-content food-tab-content">
+              <div class="food-header">
+                <button mat-fab color="primary" class="add-food-btn" (click)="navigateToCreateFood()">
+                  <span>Create food</span>
+                </button>
+              </div>
+              <div class="table-container">
+                <table class="food-table">
+                  <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Brand</th>
+                    <th>Quantity (kg)</th>
+                    <th>Date</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let food of pondDetailData.food">
+                    <td>{{ food.id }}</td>
+                    <td>{{ food.name }}</td>
+                    <td>{{ food.brand }}</td>
+                    <td>{{ food.quantity }}</td>
+                    <td>{{ food.date }}</td>
+                  </tr>
+                  <tr *ngIf="!pondDetailData.food || pondDetailData.food.length === 0">
+                    <td colspan="5" class="no-data">No food records available</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
       </div>
-    </mat-tab>
-    <mat-tab label="Food">
-      <div class="pond-detail-content food-tab-content">
-        <div class="food-header">
-          <button mat-fab color="primary" class="add-food-btn" (click)="navigateToCreateFood()">
-            <span>Create food</span>
-          </button>
-        </div>
-        <div class="table-container">
-          <table class="food-table">
-            <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Brand</th>
-              <th>Quantity (kg)</th>
-              <th>Date</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let food of pondDetailData.food">
-              <td>{{ food.id }}</td>
-              <td>{{ food.name }}</td>
-              <td>{{ food.brand }}</td>
-              <td>{{ food.quantity }}</td>
-              <td>{{ food.date }}</td>
-            </tr>
-            <tr *ngIf="pondDetailData.food.length === 0">
-              <td colspan="4" class="no-data">No food records available</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <ng-template #noData>
+        <p>No hay datos disponibles para este estanque.</p>
+      </ng-template>
     </mat-tab>
   </mat-tab-group>
 </div>

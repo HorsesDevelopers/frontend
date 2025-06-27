@@ -34,11 +34,7 @@ export class AuthenticationService {
     return this.signedInUsername.asObservable();
   }
 
-  /**
-   * Sign up a new user.
-   * @param signUpRequest The sign up request.
-   * @returns The sign up response.
-   */
+
   signUp(signUpRequest: SignUpRequest) {
     return this.http.post<SignUpResponse>(`${this.basePath}/authentication/sign-up`, signUpRequest, this.httpOptions)
       .subscribe({
@@ -59,7 +55,6 @@ export class AuthenticationService {
    * @returns The sign in response.
    */
   signIn(signInRequest: SignInRequest) {
-    console.log(signInRequest);
     return this.http.post<SignInResponse>(`${this.basePath}/authentication/sign-in`, signInRequest, this.httpOptions)
       .subscribe({
         next: (response) => {
@@ -67,15 +62,13 @@ export class AuthenticationService {
           this.signedInUserId.next(response.id);
           this.signedInUsername.next(response.username);
           localStorage.setItem('token', response.token);
-          console.log(`Signed in as ${response.username} with token ${response.token}`);
-          this.router.navigate(['/']).then();
+          this.router.navigate(['/home']).then();
         },
         error: (error) => {
           this.signedIn.next(false);
           this.signedInUserId.next(0);
           this.signedInUsername.next('');
           console.error(`Error while signing in: ${error}`);
-          this.router.navigate(['/sign-in']).then();
         }
       });
   }

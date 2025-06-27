@@ -1,0 +1,33 @@
+<div class="create-pond-container">
+  <h1 class="create-pond-title">Create Pond</h1>
+
+  <div class="form-group">
+    <label for="pondName">Name</label>
+    <input id="pondName" class="input-field" [(ngModel)]="newPond.name" />
+  </div>
+
+  <div class="form-group">
+    <label for="ubication">Location</label>
+    <input id="ubication" class="input-field" [(ngModel)]="newPond.ubication" />
+  </div>
+
+  <div class="form-group">
+    <label for="waterType">Water Type</label>
+    <input id="waterType" class="input-field" [(ngModel)]="newPond.waterType" />
+  </div>
+
+  <div class="form-group">
+    <label for="volume">Volume</label>
+    <input type="number" id="volume" class="input-field" [(ngModel)]="newPond.volume" />
+  </div>
+
+  <div class="form-group">
+    <label for="area">Area</label>
+    <input type="number" id="area" class="input-field" [(ngModel)]="newPond.area" />
+  </div>
+
+  <div class="button-group">
+    <button class="create-btn" (click)="createPond()">Create</button>
+    <button class="cancel-btn" (click)="cancel()">Cancel</button>
+  </div>
+</div>
