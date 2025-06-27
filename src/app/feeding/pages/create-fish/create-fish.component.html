@@ -1,0 +1,17 @@
+<div class="create-fish-container">
+  <h2>Agregar Pez</h2>
+  <form (ngSubmit)="onSubmit()" #fishForm="ngForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Tipo</mat-label>
+      <input matInput name="type" [(ngModel)]="fish.type" required />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Cantidad</mat-label>
+      <input matInput type="number" name="quantity" [(ngModel)]="fish.quantity" required min="1" />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="fishForm.invalid || loading">
+      {{ loading ? 'Guardando...' : 'Guardar' }}
+    </button>
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+  </form>
+</div>
