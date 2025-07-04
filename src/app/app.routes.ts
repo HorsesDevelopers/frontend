@@ -17,11 +17,12 @@ import {HomeComponent} from './iam/pages/home/home.component';
 import {PageNotFoundComponent} from './public/pages/page-not-found/page-not-found.component';
 import { CreatePondComponent } from './feeding/pages/create-pond/create-pond.component';
 import {CreateFishComponent} from './feeding/pages/create-fish/create-fish.component';
-
+import { AnalyticsManagementComponent } from './analytics/pages/analytics-management/analytics-management.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
   { path: 'communication', component: CommunicationComponent },
+  { path: 'analytics', component: AnalyticsManagementComponent },
   { path: 'home', component: HomeComponent},
   { path: 'schedule', component: ScheduleViewComponent },
   { path: 'schedule/new', component: CreateScheduleComponent, canActivate: [authenticationGuard] },
