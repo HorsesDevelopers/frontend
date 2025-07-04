@@ -5,12 +5,15 @@ import {Schedule} from '../../interfaces/schedule.interface';
 import {NgForOf} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {Router} from '@angular/router';
+import {TranslateModule, TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-schedule-view',
   imports: [
     NgForOf,
-    FormsModule
+    FormsModule,
+    TranslatePipe,
+    TranslateModule
   ],
   templateUrl: './schedule-view.component.html',
   styleUrl: './schedule-view.component.css'

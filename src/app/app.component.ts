@@ -4,6 +4,8 @@ import { filter } from 'rxjs';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatNavList} from '@angular/material/list';
 import {NgIf} from '@angular/common';
+import {LanguageSwitcherComponent} from './public/components/language-switcher/language-switcher.component';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +15,8 @@ import {NgIf} from '@angular/common';
     RouterOutlet,
     MatSidenavModule,
     MatNavList,
-    NgIf
+    NgIf,
+    LanguageSwitcherComponent
   ],
   styleUrl: './app.component.css'
 })
@@ -22,7 +25,15 @@ export class AppComponent {
   logo = 'assets/images/logo.png';
   showSidebar = true;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private translate: TranslateService) {
+
+    this.translate.addLangs(['en', 'es']);
+
+    this.translate.setDefaultLang('en');
+
+    const browserLang = this.translate.getBrowserLang();
+    this.translate.use(browserLang?.match(/en|es/) ? browserLang : 'en');
+
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: any) => {

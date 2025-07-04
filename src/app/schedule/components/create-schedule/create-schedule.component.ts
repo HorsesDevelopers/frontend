@@ -3,12 +3,14 @@ import { Router } from '@angular/router';
 import { ScheduleService } from '../../service/schedule.service';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { Schedule } from '../../interfaces/schedule.interface';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-create-schedule',
   templateUrl: './create-schedule.component.html',
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslatePipe
   ],
   styleUrl: './create-schedule.component.css'
 })

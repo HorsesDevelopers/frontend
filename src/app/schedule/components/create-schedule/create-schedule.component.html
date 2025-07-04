@@ -5,7 +5,7 @@
     <form [formGroup]="scheduleForm" (ngSubmit)="createSchedule()">
       <div class="form-row">
         <div class="form-group">
-          <label>Pond Name:</label>
+          <label>{{ 'pond.name' | translate }}</label>
           <input type="text" formControlName="pondName" placeholder="Name">
         </div>
 
