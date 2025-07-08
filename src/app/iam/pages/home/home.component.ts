@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SensorService } from '../../../device/service/sensor.service';
-import { Sensor } from '../../../device/model/sensor';
-import {SensorInfoComponent} from '../../../device/component/sensor-info/sensor-info.component';
+import { SensorService } from '../../../aar/service/sensor.service';
+import { Sensor } from '../../../aar/model/sensor';
+import {SensorInfoComponent} from '../../../aar/component/sensor-info/sensor-info.component';
 import {NgClass, NgForOf, NgIf} from '@angular/common';
 import {Router} from '@angular/router';
 import {ListScheduleComponent} from '../../../schedule/components/list-schedule/list-schedule.component';

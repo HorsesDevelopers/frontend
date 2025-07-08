@@ -8,7 +8,7 @@ import { NgForOf } from '@angular/common';
 import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-device-page',
+  selector: 'app-aar-page',
   templateUrl: './device-page.component.html',
   imports: [
     NgForOf,
