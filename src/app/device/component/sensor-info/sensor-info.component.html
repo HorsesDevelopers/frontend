@@ -1,22 +1,22 @@
 <div class="sensor-info-area">
-  <h1>River Pond</h1>
+  <h1>{{ 'sensor.riverPond' | translate }}</h1>
   <div class="sensor-info-container">
-    <h2>Water Quality</h2>
+    <h2>{{ 'sensor.waterQuality' | translate }}</h2>
     <div class="sensor-info" *ngIf="sensor">
       <div class="sensor-info-item">
-        Temp:
+        {{ 'sensor.temp' | translate }}:
         <div class="circle blue">
           <span> {{ sensor.temperature }}</span>
         </div>
       </div>
       <div class="sensor-info-item">
-        Oxígeno:
+        {{ 'sensor.oxygen' | translate }}:
         <div class="circle blue">
           <span> {{ sensor.oxygen }}</span>
         </div>
       </div>
       <div class="sensor-info-item">
-        ph:
+        {{ 'sensor.ph' | translate }}:
         <div class="circle blue">
           <span>{{ sensor.nytrogen }}</span>
         </div>

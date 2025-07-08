@@ -1,29 +1,25 @@
 <div class="create-schedule-container">
-  <h1 class="page-title">New Schedule</h1>
-
+  <h1 class="page-title">{{ 'schedule.newSchedule' | translate }}</h1>
   <div class="schedule-form-container">
     <form [formGroup]="scheduleForm" (ngSubmit)="createSchedule()">
       <div class="form-row">
         <div class="form-group">
           <label>{{ 'pond.name' | translate }}</label>
-          <input type="text" formControlName="pondName" placeholder="Name">
+          <input type="text" formControlName="pondName" [placeholder]="'pond.name' | translate">
         </div>
-
         <div class="form-group">
-          <label>Species:</label>
-          <input type="text" formControlName="species" placeholder="Name">
+          <label>{{ 'pond.species' | translate }}</label>
+          <input type="text" formControlName="species" [placeholder]="'pond.species' | translate">
         </div>
       </div>
-
       <div class="form-row">
         <div class="form-group">
-          <label>Size:</label>
+          <label>{{ 'schedule.size' | translate }}:</label>
           <div class="input-with-unit">
-            <input type="number" formControlName="size" placeholder="size" min="0">
+            <input type="number" formControlName="size" [placeholder]="'schedule.size' | translate" min="0">
             <span class="unit">cm</span>
           </div>
         </div>
-
         <div class="form-group">
           <label>Mass:</label>
           <div class="input-with-unit">
@@ -32,13 +28,11 @@
           </div>
         </div>
       </div>
-
       <div class="form-row four-columns">
         <div class="form-group">
-          <label>Kind of food:</label>
-          <input type="text" formControlName="food" placeholder="type">
+          <label>{{ 'schedule.food' | translate }}:</label>
+          <input type="text" formControlName="food" [placeholder]="'schedule.food' | translate">
         </div>
-
         <div class="form-group">
           <label>Weight of food:</label>
           <div class="input-with-unit">
@@ -46,15 +40,13 @@
             <span class="unit">kg</span>
           </div>
         </div>
-
         <div class="form-group">
-          <label>Loop:</label>
+          <label>{{ 'device.loop' | translate }}:</label>
           <div class="input-with-unit">
-            <input type="number" formControlName="loop" placeholder="time">
-            <span class="unit">hours</span>
+            <input type="number" formControlName="loop" [placeholder]="'device.loop' | translate">
+            <span class="unit">{{ 'device.hours' | translate }}</span>
           </div>
         </div>
-
         <div class="form-group">
           <label>Sensor condition:</label>
           <div class="sensor-condition">
@@ -64,14 +56,13 @@
           </div>
         </div>
       </div>
-
       <div class="form-row">
         <div class="form-group full-width">
-          <label>Comment:</label>
-          <textarea formControlName="comment" placeholder="type here"></textarea>
+          <label>{{ 'device.comment' | translate }}:</label>
+          <textarea formControlName="comment" [placeholder]="'device.comment' | translate"></textarea>
         </div>
       </div>
-      <button type="submit">Create</button>
+      <button type="submit">{{ 'schedule.create' | translate }}</button>
     </form>
   </div>
 </div>

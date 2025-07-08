@@ -1,14 +1,12 @@
 <div class="container">
-  <h2>Notifications</h2>
+  <h2>{{ 'communication.notifications' | translate }}</h2>
   <div class="notification-box">
     ⚠️ Temperatura crítica detectada: 42.7°C en TEMP-001. Supera el umbral permitido de 40°C.
   </div>
-
   <div class="alerts-header">
-    <h3>Alerts</h3>
-    <button (click)="goToCreateAlert()">Create alert</button>
+    <h3>{{ 'communication.alerts' | translate }}</h3>
+    <button (click)="goToCreateAlert()">{{ 'communication.createAlert' | translate }}</button>
   </div>
-
   <div class="alert-container">
     <div *ngFor="let alert of alerts; let i = index" class="alert-card">
       <div class="alert-header">
@@ -20,4 +18,3 @@
     </div>
   </div>
 </div>
-

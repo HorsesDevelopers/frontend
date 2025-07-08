@@ -2,5 +2,90 @@
   "pond": {
     "name": "Nombre Estanque: ",
     "species": "Especie: "
+  },
+  "sidenav": {
+    "home": "Inicio",
+    "schedule": "Horario",
+    "communication": "Comunicación",
+    "ponds": "Estanques",
+    "devices": "Dispositivos"
+  },
+  "schedule": {
+    "new": "Nuevo Horario",
+    "create": "Crear",
+    "editPending": "Editar Tarea Pendiente",
+    "pendings": "Pendientes",
+    "staffStatus": "Estado del Staff",
+    "goToPendings": "Ir a Pendientes",
+    "feedingSchedules": "Horarios de Alimentación",
+    "search": "Buscar",
+    "pond": "Estanque",
+    "food": "Alimento",
+    "size": "Tamaño",
+    "status": "Estado",
+    "newSchedule": "Nuevo Horario"
+  },
+  "device": {
+    "add": "Agregar Dispositivo",
+    "type": "Tipo de Dispositivo",
+    "selectType": "Seleccione un tipo de dispositivo",
+    "sensor": "Sensor",
+    "dispenser": "Dispensador",
+    "pond": "Estanque",
+    "foodTank": "Tanque de Alimento",
+    "comment": "Comentario",
+    "loop": "Ciclo",
+    "time": "Tiempo",
+    "hours": "Horas",
+    "devices": "Dispositivos",
+    "sensors": "Sensores",
+    "dispensers": "Dispensadores",
+    "id": "ID",
+    "status": "Estado",
+    "pondId": "ID Estanque",
+    "lastDispense": "Última Dispensación"
+  },
+  "communication": {
+    "notifications": "Notificaciones",
+    "alerts": "Alertas",
+    "createAlert": "Crear alerta",
+    "alertName": "Nombre de la Alerta",
+    "description": "Descripción",
+    "timestamp": "Hora"
+  },
+  "auth": {
+    "signIn": "Iniciar Sesión",
+    "signOut": "Cerrar Sesión",
+    "signUp": "Registrarse",
+    "username": "Usuario",
+    "password": "Contraseña",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "newAccount": "¿Nueva cuenta?",
+    "alreadyAccount": "¿Ya tienes una cuenta?",
+    "createAccount": "Crear cuenta"
+  },
+  "public": {
+    "pageNotFound": "Página no encontrada",
+    "invalidPath": "La ruta <b>{{ invalidPath }}</b> no es válida.",
+    "home": "Inicio"
+  },
+  "feeding": {
+    "sensors": "Sensores",
+    "fish": "Peces"
+  },
+  "sensor": {
+    "riverPond": "Estanque de Río",
+    "waterQuality": "Calidad del Agua",
+    "temp": "Temp",
+    "oxygen": "Oxígeno",
+    "ph": "pH"
+  },
+  "common": {
+    "cancel": "Cancelar",
+    "saveChanges": "Guardar Cambios",
+    "notAssigned": "-- No Asignado --",
+    "priorityLevel": "Nivel de Prioridad",
+    "comments": "Comentarios",
+    "assignToStaff": "Asignar a Staff"
   }
 }

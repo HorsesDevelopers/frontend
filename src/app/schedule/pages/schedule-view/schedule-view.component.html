@@ -1,27 +1,23 @@
 <div class="schedule-main-container">
   <h1 class="page-title">{{ 'pond.name' | translate }}</h1>
-
   <div class="schedules-container">
-    <h2 class="feeding-schedules">Feeding Schedules</h2>
-
+    <h2 class="feeding-schedules">{{ 'schedule.feedingSchedules' | translate }}</h2>
     <div class="search-container">
-      <input type="text" placeholder="Search" [(ngModel)]="searchText" class="search-input">
+      <input type="text" [placeholder]="'schedule.search' | translate" [(ngModel)]="searchText" class="search-input">
       <div class="search-icon"><span class="material-symbols-outlined">search</span></div>
     </div>
-
     <div class="schedules-list">
       <div class="schedule-item" *ngFor="let schedule of dataSource.data; let i = index">
-        <div class="pond-name">Pond: {{ schedule.pondName }}</div>
-        <div class="food-type">{{ schedule.food }}</div>
-        <div class="size">Size: {{ schedule.size }} cm</div>
-        <div class="status">Status: {{ schedule.status }}</div>
+        <div class="pond-name">{{ 'schedule.pond' | translate }}: {{ schedule.pondName }}</div>
+        <div class="food-type">{{ 'schedule.food' | translate }}: {{ schedule.food }}</div>
+        <div class="size">{{ 'schedule.size' | translate }}: {{ schedule.size }} cm</div>
+        <div class="status">{{ 'schedule.status' | translate }}: {{ schedule.status }}</div>
         <div><span class="material-symbols-outlined">edit_square</span></div>
       </div>
     </div>
   </div>
-
   <div class="buttons-container">
-    <button class="pending-button" (click)="goToPending()">Go to Pendings</button>
-    <button class="new-schedule-button" (click)="createNewSchedule()">New Schedule</button>
+    <button class="pending-button" (click)="goToPending()">{{ 'schedule.goToPendings' | translate }}</button>
+    <button class="new-schedule-button" (click)="createNewSchedule()">{{ 'schedule.newSchedule' | translate }}</button>
   </div>
 </div>

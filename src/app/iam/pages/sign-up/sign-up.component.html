@@ -2,14 +2,14 @@
   <div class="sign-in-container">
     <div class="sign-in-form-container">
       <div class="sign-in-form-container-area">
-        <h1>Sign Up</h1>
+        <h1>{{ 'auth.signUp' | translate }}</h1>
         <form [formGroup]="form" (submit)="onSubmit()" class="form">
           <div class="box-input">
-            <input class="input-text" matInput placeholder="Username" id="username" name="username" required formControlName="username">
+            <input class="input-text" matInput [placeholder]="'auth.username' | translate" id="username" name="username" required formControlName="username">
             <mat-error *ngIf="isInvalidControl(form,'username')">{{ errorMessagesForControl(form,'username')}}</mat-error>
           </div>
           <div class="box-input">
-            <input class="input-text"  matInput type="password" placeholder="Password" id="password" name="password" required formControlName="password">
+            <input class="input-text"  matInput type="password" [placeholder]="'auth.password' | translate" id="password" name="password" required formControlName="password">
             <mat-error *ngIf="isInvalidControl(form,'password')">{{ errorMessagesForControl(form,'password')}}</mat-error>
           </div>
           <div class="box-input">
@@ -20,14 +20,14 @@
             </select>
             <mat-error *ngIf="isInvalidControl(form, 'role')">{{ errorMessagesForControl(form, 'role') }}</mat-error>
           </div>
-          <button class="button" (click)="goToHome()">Create account</button>
+          <button class="button" (click)="goToHome()">{{ 'auth.createAccount' | translate }}</button>
         </form>
       </div>
     </div>
     <div class="divider"></div>
     <div class="sign-in-CTA-container">
-      <p>Already have and account?</p>
-      <button class="button" (click)="goToSignIn()">Sign In</button>
+      <p>{{ 'auth.alreadyAccount' | translate }}</p>
+      <button class="button" (click)="goToSignIn()">{{ 'auth.signIn' | translate }}</button>
     </div>
   </div>
 </div>

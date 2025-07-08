@@ -2,27 +2,27 @@
   <div class="sign-in-container">
     <div class="sign-in-form-container">
       <div class="sign-in-form-container-area">
-        <h1>Sign In</h1>
+        <h1>{{ 'auth.signIn' | translate }}</h1>
         <form [formGroup]="form" (submit)="onSubmit()" class="form">
           <div class="box-input">
-            <input class="input-text" matInput placeholder="Username" id="username" name="username" required formControlName="username">
+            <input class="input-text" matInput [placeholder]="'auth.username' | translate" id="username" name="username" required formControlName="username">
             <mat-error *ngIf="isInvalidControl(form,'username')">{{ errorMessagesForControl(form,'username')}}</mat-error>
           </div>
           <div class="box-input">
-            <input class="input-text" matInput type="password" placeholder="Password" id="password" name="password" required formControlName="password">
+            <input class="input-text" matInput type="password" [placeholder]="'auth.password' | translate" id="password" name="password" required formControlName="password">
             <mat-error *ngIf="isInvalidControl(form,'password')">{{ errorMessagesForControl(form,'password')}}</mat-error>
           </div>
           <div class="forgot-password">
-            <a routerLink="/iam/forgot-password">Forgot password?</a>
+            <a routerLink="/iam/forgot-password">{{ 'auth.forgotPassword' | translate }}</a>
           </div>
-          <button class="button" type="submit">Sign In</button>
+          <button class="button" type="submit">{{ 'auth.signIn' | translate }}</button>
         </form>
       </div>
     </div>
     <div class="divider"></div>
     <div class="sign-in-CTA-container">
-      <p>New account?</p>
-      <button class="button" (click)="goToSignUp()">Sign Up</button>
+      <p>{{ 'auth.newAccount' | translate }}</p>
+      <button class="button" (click)="goToSignUp()">{{ 'auth.signUp' | translate }}</button>
     </div>
   </div>
 </div>

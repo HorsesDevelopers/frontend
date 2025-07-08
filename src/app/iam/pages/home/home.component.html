@@ -2,8 +2,7 @@
   <div class="home-container">
     <div class="pond-info">
       <app-sensor-info [sensorId]="selectedSensorId"></app-sensor-info>
-      <div class="spacer-sp">
-      </div>
+      <div class="spacer-sp"></div>
       <div *ngIf="sensors" class="sensor-buttons-list">
         <button *ngFor="let sensor of sensors"
                 (click)="selectSensor(sensor.id)"
@@ -14,8 +13,8 @@
       </div>
     </div>
     <button class="button-add" style="margin-top: 90px"
-    (click)="goToCreateSchedule()">
-      Add Schedule
+            (click)="goToCreateSchedule()">
+      {{ 'schedule.new' | translate }}
     </button>
     <div class="schedule-info">
       <app-list-schedule></app-list-schedule>

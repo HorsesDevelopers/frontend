@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertService } from '../../service/alert.service';
 import { FormsModule } from '@angular/forms';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-create-alert',
   templateUrl: './create-alert.component.html',
   styleUrls: ['./create-alert.component.css'],
   standalone: true,
-  imports: [FormsModule]
+  imports: [FormsModule, TranslatePipe]
 })
 export class CreateAlertComponent {
   name = '';

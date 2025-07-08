@@ -5,14 +5,14 @@
         <img [src]="logo" class="logo">
       </div>
       <mat-nav-list class="list">
-        <a routerLink="/home">Home</a>
-        <a routerLink="/schedule">Schedule</a>
-        <a routerLink="/communication">Communication</a>
-        <a routerLink="/ponds">Ponds</a>
-        <a routerLink="/devices">Devices</a>
+        <a routerLink="/home">{{ 'sidenav.home' | translate }}</a>
+        <a routerLink="/schedule">{{ 'sidenav.schedule' | translate }}</a>
+        <a routerLink="/communication">{{ 'sidenav.communication' | translate }}</a>
+        <a routerLink="/ponds">{{ 'sidenav.ponds' | translate }}</a>
+        <a routerLink="/devices">{{ 'sidenav.devices' | translate }}</a>
       </mat-nav-list>
       <button class="log-out-button" (click)="logout()">
-        Cerrar Sesión
+        Log out
       </button>
       <app-language-switcher/>
     </div>

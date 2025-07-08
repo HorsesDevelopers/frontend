@@ -2,5 +2,90 @@
   "pond": {
     "name": "Pond Name: ",
     "species": "Species: "
+  },
+  "sidenav": {
+    "home": "Home",
+    "schedule": "Schedule",
+    "communication": "Communication",
+    "ponds": "Ponds",
+    "devices": "Devices"
+  },
+  "schedule": {
+    "new": "New Schedule",
+    "create": "Create",
+    "editPending": "Edit Pending Task",
+    "pendings": "Pendings",
+    "staffStatus": "Staff's Status",
+    "goToPendings": "Go to Pendings",
+    "feedingSchedules": "Feeding Schedules",
+    "search": "Search",
+    "pond": "Pond",
+    "food": "Food",
+    "size": "Size",
+    "status": "Status",
+    "newSchedule": "New Schedule"
+  },
+  "device": {
+    "add": "Add Device",
+    "type": "Device Type",
+    "selectType": "Select a device type",
+    "sensor": "Sensor",
+    "dispenser": "Dispenser",
+    "pond": "Pond",
+    "foodTank": "Food Tank",
+    "comment": "Comment",
+    "loop": "Loop",
+    "time": "Time",
+    "hours": "Hours",
+    "devices": "Devices",
+    "sensors": "Sensors",
+    "dispensers": "Dispensers",
+    "id": "ID",
+    "status": "Status",
+    "pondId": "Pond ID",
+    "lastDispense": "Last Dispense"
+  },
+  "communication": {
+    "notifications": "Notifications",
+    "alerts": "Alerts",
+    "createAlert": "Create alert",
+    "alertName": "Alert Name",
+    "description": "Description",
+    "timestamp": "Timestamp"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "signUp": "Sign Up",
+    "username": "Username",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "newAccount": "New account?",
+    "alreadyAccount": "Already have an account?",
+    "createAccount": "Create account"
+  },
+  "public": {
+    "pageNotFound": "Page Not Found",
+    "invalidPath": "The path <b>{{ invalidPath }}</b> is not valid.",
+    "home": "Home"
+  },
+  "feeding": {
+    "sensors": "Sensors",
+    "fish": "Fish"
+  },
+  "sensor": {
+    "riverPond": "River Pond",
+    "waterQuality": "Water Quality",
+    "temp": "Temp",
+    "oxygen": "Oxygen",
+    "ph": "pH"
+  },
+  "common": {
+    "cancel": "Cancel",
+    "saveChanges": "Save Changes",
+    "notAssigned": "-- Not Assigned --",
+    "priorityLevel": "Priority Level",
+    "comments": "Comments",
+    "assignToStaff": "Assign to Staff"
   }
 }

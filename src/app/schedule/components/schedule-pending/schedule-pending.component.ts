@@ -6,13 +6,15 @@ import {lastValueFrom} from 'rxjs';
 import {Pending, PendingSchedule} from '../../interfaces/pending-schedule.interface';
 import {NgForOf, NgIf} from '@angular/common';
 import {EditPendingScheduleComponent} from '../edit-pending-schedule/edit-pending-schedule.component';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-schedule-pending',
   imports: [
     NgIf,
     NgForOf,
-    EditPendingScheduleComponent
+    EditPendingScheduleComponent,
+    TranslatePipe
   ],
   templateUrl: './schedule-pending.component.html',
   styleUrl: './schedule-pending.component.css'

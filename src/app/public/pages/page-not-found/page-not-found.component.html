@@ -1,3 +1,3 @@
-<h1>Page Not Found</h1>
-<p>The path <b>{{ invalidPath }}</b> is not valid.</p>
-<button mat-button (click)="onNavigateHome()">Home</button>
+<h1>{{ 'public.pageNotFound' | translate }}</h1>
+<p [innerHTML]="'public.invalidPath' | translate:{ invalidPath: invalidPath }"></p>
+<button mat-button (click)="onNavigateHome()">{{ 'public.home' | translate }}</button>

@@ -7,6 +7,7 @@ import {MatError, MatFormField} from "@angular/material/form-field";
 import {MatInput, MatLabel} from "@angular/material/input";
 import {NgIf} from "@angular/common";
 import {Router} from '@angular/router';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sign-up',
@@ -15,7 +16,8 @@ import {Router} from '@angular/router';
     ReactiveFormsModule,
     MatInput,
     MatError,
-    NgIf
+    NgIf,
+    TranslatePipe
   ],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'

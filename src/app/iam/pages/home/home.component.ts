@@ -5,6 +5,7 @@ import {SensorInfoComponent} from '../../../device/component/sensor-info/sensor-
 import {NgClass, NgForOf, NgIf} from '@angular/common';
 import {Router} from '@angular/router';
 import {ListScheduleComponent} from '../../../schedule/components/list-schedule/list-schedule.component';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,8 @@ import {ListScheduleComponent} from '../../../schedule/components/list-schedule/
     NgForOf,
     NgIf,
     NgClass,
-    ListScheduleComponent
+    ListScheduleComponent,
+    TranslatePipe
   ],
   providers: [SensorService]
 })

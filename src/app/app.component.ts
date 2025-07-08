@@ -5,7 +5,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatNavList} from '@angular/material/list';
 import {NgIf} from '@angular/common';
 import {LanguageSwitcherComponent} from './public/components/language-switcher/language-switcher.component';
-import {TranslateService} from '@ngx-translate/core';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +16,8 @@ import {TranslateService} from '@ngx-translate/core';
     MatSidenavModule,
     MatNavList,
     NgIf,
-    LanguageSwitcherComponent
+    LanguageSwitcherComponent,
+    TranslatePipe
   ],
   styleUrl: './app.component.css'
 })

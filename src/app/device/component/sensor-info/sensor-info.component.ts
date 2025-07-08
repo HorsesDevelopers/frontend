@@ -2,13 +2,15 @@ import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/cor
 import { SensorService } from '../../service/sensor.service';
 import { Sensor } from '../../model/sensor';
 import { NgIf } from '@angular/common';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sensor-info',
   templateUrl: './sensor-info.component.html',
   styleUrl: './sensor-info.component.css',
   imports: [
-    NgIf
+    NgIf,
+    TranslatePipe
   ],
   providers: [SensorService]
 })

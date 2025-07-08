@@ -2,12 +2,14 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Pending, PendingSchedule, Staff} from '../../interfaces/pending-schedule.interface';
 import {FormsModule} from '@angular/forms';
 import {NgForOf} from '@angular/common';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-edit-pending-schedule',
   imports: [
     FormsModule,
-    NgForOf
+    NgForOf,
+    TranslatePipe
   ],
   templateUrl: './edit-pending-schedule.component.html',
   styleUrl: './edit-pending-schedule.component.css'

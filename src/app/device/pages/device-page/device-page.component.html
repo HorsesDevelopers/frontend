@@ -1,15 +1,15 @@
 <div class="device-page">
   <div class="device-page-content">
-    <h1>Devices</h1>
+    <h1>{{ 'device.devices' | translate }}</h1>
     <div class="tables-container">
       <div class="item-container">
-        <h2>Sensores </h2>
+        <h2>{{ 'device.sensors' | translate }}</h2>
         <table class="device-table">
           <thead>
           <tr>
-            <th>ID</th>
-            <th>Status</th>
-            <th>Pond ID</th>
+            <th>{{ 'device.id' | translate }}</th>
+            <th>{{ 'device.status' | translate }}</th>
+            <th>{{ 'device.pondId' | translate }}</th>
           </tr>
           </thead>
           <tbody>
@@ -22,15 +22,14 @@
         </table>
       </div>
       <div class="item-container">
-        <h2>Dispensers </h2>
-
+        <h2>{{ 'device.dispensers' | translate }}</h2>
         <table class="device-table">
           <thead>
           <tr>
-            <th>ID</th>
-            <th>Status</th>
-            <th>Pond ID</th>
-            <th>Last Dispense</th>
+            <th>{{ 'device.id' | translate }}</th>
+            <th>{{ 'device.status' | translate }}</th>
+            <th>{{ 'device.pondId' | translate }}</th>
+            <th>{{ 'device.lastDispense' | translate }}</th>
           </tr>
           </thead>
           <tbody>
@@ -44,6 +43,6 @@
         </table>
       </div>
     </div>
-    <button class="button-add" (click)="navigateToAddDevice()">Add Device</button>
+    <button class="button-add" (click)="navigateToAddDevice()">{{ 'device.add' | translate }}</button>
   </div>
 </div>
