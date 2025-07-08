@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
 import {TranslateModule, TranslatePipe} from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-schedule-view',
+  selector: 'app-sdap-view',
   imports: [
     NgForOf,
     FormsModule,

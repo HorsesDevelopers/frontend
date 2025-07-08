@@ -2,21 +2,21 @@ import { Routes } from '@angular/router';
 import {authenticationGuard} from "./iam/services/authentication.guard";
 import {SignInComponent} from "./iam/pages/sign-in/sign-in.component";
 import {SignUpComponent} from "./iam/pages/sign-up/sign-up.component";
-import { CommunicationComponent } from './feeding/pages/communication/communication.component';
-import { CreateAlertComponent } from './feeding/components/create-alert/create-alert.component';
-import {PondDetailViewComponent} from './feeding/pages/pond-detail-view/pond-detail-view.component';
-import {PondsViewComponent} from './feeding/pages/ponds-view/ponds-view.component';
-import {ScheduleViewComponent} from './schedule/pages/schedule-view/schedule-view.component';
-import {CreateScheduleComponent} from './schedule/components/create-schedule/create-schedule.component';
-import {CreateSensorComponent} from './feeding/pages/create-sensor/create-sensor.component';
-import {CreateFoodComponent} from './feeding/pages/create-food/create-food.component';
-import {SchedulePendingComponent} from './schedule/components/schedule-pending/schedule-pending.component';
+import { CommunicationComponent } from './oam/pages/communication/communication.component';
+import { CreateAlertComponent } from './oam/components/create-alert/create-alert.component';
+import {PondDetailViewComponent} from './oam/pages/pond-detail-view/pond-detail-view.component';
+import {PondsViewComponent} from './oam/pages/ponds-view/ponds-view.component';
+import {ScheduleViewComponent} from './sdap/pages/schedule-view/schedule-view.component';
+import {CreateScheduleComponent} from './sdap/components/create-schedule/create-schedule.component';
+import {CreateSensorComponent} from './oam/pages/create-sensor/create-sensor.component';
+import {CreateFoodComponent} from './oam/pages/create-food/create-food.component';
+import {SchedulePendingComponent} from './sdap/components/schedule-pending/schedule-pending.component';
 import {DevicePageComponent} from './aar/pages/device-page/device-page.component';
 import {AddDeviceComponent} from './aar/pages/add-device/add-device.component';
 import {HomeComponent} from './iam/pages/home/home.component';
 import {PageNotFoundComponent} from './public/pages/page-not-found/page-not-found.component';
-import { CreatePondComponent } from './feeding/pages/create-pond/create-pond.component';
-import {CreateFishComponent} from './feeding/pages/create-fish/create-fish.component';
+import { CreatePondComponent } from './oam/pages/create-pond/create-pond.component';
+import {CreateFishComponent} from './oam/pages/create-fish/create-fish.component';
 
 
 export const routes: Routes = [
@@ -24,8 +24,8 @@ export const routes: Routes = [
   { path: 'communication', component: CommunicationComponent },
   { path: 'home', component: HomeComponent},
   { path: 'schedule', component: ScheduleViewComponent },
-  { path: 'schedule/new', component: CreateScheduleComponent, canActivate: [authenticationGuard] },
-  { path: 'schedule/pending', component: SchedulePendingComponent, canActivate: [authenticationGuard] },
+  { path: 'sdap/new', component: CreateScheduleComponent, canActivate: [authenticationGuard] },
+  { path: 'sdap/pending', component: SchedulePendingComponent, canActivate: [authenticationGuard] },
   { path: 'create-alert', component: CreateAlertComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent},

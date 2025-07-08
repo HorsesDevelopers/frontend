@@ -6,7 +6,7 @@ import { Schedule } from '../../interfaces/schedule.interface';
 import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-create-schedule',
+  selector: 'app-create-sdap',
   templateUrl: './create-schedule.component.html',
   imports: [
     ReactiveFormsModule,

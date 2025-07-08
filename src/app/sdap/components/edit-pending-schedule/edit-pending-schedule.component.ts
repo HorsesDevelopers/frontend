@@ -5,7 +5,7 @@ import {NgForOf} from '@angular/common';
 import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-edit-pending-schedule',
+  selector: 'app-edit-pending-sdap',
   imports: [
     FormsModule,
     NgForOf,

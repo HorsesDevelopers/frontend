@@ -9,7 +9,7 @@ import {EditPendingScheduleComponent} from '../edit-pending-schedule/edit-pendin
 import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-schedule-pending',
+  selector: 'app-sdap-pending',
   imports: [
     NgIf,
     NgForOf,
@@ -45,7 +45,7 @@ export class SchedulePendingComponent implements OnInit {
       this.schedulePendingData.staff = response.staff;
       console.log('response', response);
     } catch (error) {
-      console.error('Error fetching schedule pending:', error);
+      console.error('Error fetching sdap pending:', error);
     } finally {
       this.isLoading = false;
     }

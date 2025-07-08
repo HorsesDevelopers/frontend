@@ -4,7 +4,7 @@ import { Sensor } from '../../../aar/model/sensor';
 import {SensorInfoComponent} from '../../../aar/component/sensor-info/sensor-info.component';
 import {NgClass, NgForOf, NgIf} from '@angular/common';
 import {Router} from '@angular/router';
-import {ListScheduleComponent} from '../../../schedule/components/list-schedule/list-schedule.component';
+import {ListScheduleComponent} from '../../../sdap/components/list-schedule/list-schedule.component';
 import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({

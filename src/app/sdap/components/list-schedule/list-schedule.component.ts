@@ -5,7 +5,7 @@ import {NgForOf} from '@angular/common';
 import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-list-schedule',
+  selector: 'app-list-sdap',
   templateUrl: './list-schedule.component.html',
   styleUrl: './list-schedule.component.css',
   imports: [
