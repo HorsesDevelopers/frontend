@@ -1,8 +1,9 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import { Router } from '@angular/router';
-import { AlertService, Alert } from '../../service/alert.service';
+import { AlertService } from '../../service/alert.service';
 import { CommonModule } from '@angular/common';
 import {TranslatePipe} from '@ngx-translate/core';
+import {Alert} from '../../interfaces/Alert.interface';
 
 @Component({
   selector: 'app-communication',
@@ -17,7 +18,7 @@ export class CommunicationComponent implements OnInit {
   constructor(private alertService: AlertService, private router: Router) {}
 
   ngOnInit(): void {
-    this.alerts = this.alertService.getAlerts();
+    this.alerts = this.alertService.getAll();
   }
 
   goToCreateAlert() {

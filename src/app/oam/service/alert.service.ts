@@ -1,28 +1,16 @@
 import { Injectable } from '@angular/core';
+import {Alert} from '../interfaces/Alert.interface';
+import {BaseService} from '../../shared/services/base.service';
 
-export interface Alert {
-  name: string;
-  description: string;
-  timestamp: string;
-}
 
 @Injectable({
   providedIn: 'root'
 })
-export class AlertService {
-  private alerts: Alert[] = [];
+export class AlertService extends BaseService<Alert> {
 
-  getAlerts(): Alert[] {
-    return this.alerts;
+  constructor() {
+    super();
+    this.resourceEndpoint = '/notifications';
   }
-
-  addAlert(alert: Alert) {
-    this.alerts.push(alert);
-  }
-
-  removeAlert(index: number) {
-    this.alerts.splice(index, 1);
-  }
-
 }
 

@@ -10,11 +10,10 @@
   <div class="alert-container">
     <div *ngFor="let alert of alerts; let i = index" class="alert-card">
       <div class="alert-header">
-        <h4>{{ alert.name }}</h4>
+        <h4>{{ alert.title }}</h4>
         <button class="delete-btn" (click)="deleteAlert(i)">🗑️</button>
       </div>
       <p>{{ alert.description }}</p>
-      <small>{{ alert.timestamp }}</small>
     </div>
   </div>
 </div>

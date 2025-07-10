@@ -20,11 +20,10 @@ export class CreateAlertComponent {
   constructor(private alertService: AlertService, private router: Router) {}
 
   createAlert() {
-    const timestamp = `${this.hour}:${this.minute}`;
-    this.alertService.addAlert({
-      name: this.name,
-      description: this.description,
-      timestamp
+
+    this.alertService.create({
+      title: this.name,
+      description: this.description
     });
     this.router.navigate(['/communication']);
   }
