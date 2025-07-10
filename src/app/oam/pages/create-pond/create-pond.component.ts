@@ -25,13 +25,13 @@ export class CreatePondComponent {
 
   createPond() {
     this.pondService.create(this.newPond).subscribe({
-      next: () => this.router.navigate(['/ponds-view']),
+      next: () => this.cancel(),
       error: err => alert('Error al crear el pond: ' + err.message)
     });
   }
 
   cancel() {
-    this.router.navigate(['/ponds-view']);
+    this.router.navigate(['/ponds']);
   }
 }
 

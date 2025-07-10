@@ -1,6 +1,8 @@
 <div class="ponds-container">
-  <h1>My Ponds</h1>
-  <button class="create-btn" (click)="navigateToCreate()">Crear Pond</button>
+  <div class="header-container">
+    <h1>My Ponds</h1>
+    <button class="create-btn" (click)="navigateToCreate()">Crear Pond</button>
+  </div>
   <div class="ponds-grid">
     <app-ponds-card
       *ngFor="let pond of dataSource.data"
