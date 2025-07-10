@@ -70,8 +70,8 @@
     "home": "Inicio"
   },
   "feeding": {
-    "sensors": "Sensores",
-    "fish": "Peces"
+    "type": "Tipo agua",
+    "ubication": "Ubicación"
   },
   "sensor": {
     "riverPond": "Estanque de Río",

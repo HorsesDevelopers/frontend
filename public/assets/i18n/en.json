@@ -70,8 +70,8 @@
     "home": "Home"
   },
   "feeding": {
-    "sensors": "Sensors",
-    "fish": "Fish"
+    "type": "Water Type",
+    "ubication": "Ubication"
   },
   "sensor": {
     "riverPond": "River Pond",
