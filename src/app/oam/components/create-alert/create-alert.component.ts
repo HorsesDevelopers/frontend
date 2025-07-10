@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { AlertService } from '../../service/alert.service';
 import { FormsModule } from '@angular/forms';
 import {TranslatePipe} from '@ngx-translate/core';
+import {HttpClient} from '@angular/common/http';
+import {lastValueFrom} from 'rxjs';
 
 @Component({
   selector: 'app-create-alert',
@@ -12,19 +14,25 @@ import {TranslatePipe} from '@ngx-translate/core';
   imports: [FormsModule, TranslatePipe]
 })
 export class CreateAlertComponent {
-  name = '';
+  title = '';
   description = '';
   hour = '';
   minute = '';
 
-  constructor(private alertService: AlertService, private router: Router) {}
+  constructor(private alertService: AlertService, private router: Router,
+              private http: HttpClient
+              ) {}
 
-  createAlert() {
-
-    this.alertService.create({
-      title: this.name,
+  async createAlert() {
+    const body = {
+      title: this.title,
       description: this.description
+    }
+
+    this.alertService.create(body).subscribe({
+      next: (response) => this.router.navigate(['/communication']),
+      error: (error) => console.error('Error al crear alerta:', error)
     });
-    this.router.navigate(['/communication']);
+
   }
 }

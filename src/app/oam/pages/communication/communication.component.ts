@@ -18,17 +18,18 @@ export class CommunicationComponent implements OnInit {
   constructor(private alertService: AlertService, private router: Router) {}
 
   ngOnInit(): void {
-    this.alerts = this.alertService.getAll();
+    this.alertService.getAll().subscribe((response: Array<Alert>) => this.alerts = response);
+
+  }
+
+  log() {
+    console.log(this.alerts);
   }
 
   goToCreateAlert() {
     this.router.navigate(['/create-alert']);
   }
 
-  deleteAlert(index: number) {
-    this.alertService.removeAlert(index);
-    this.alerts = this.alertService.getAlerts();
-  }
 
 
 }
