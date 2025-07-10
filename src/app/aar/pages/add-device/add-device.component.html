@@ -1,48 +1,48 @@
 <div class="add-device-container">
-  <h1>{{ 'aar.add' | translate }}</h1>
+  <h1>{{ 'device.add' | translate }}</h1>
   <form class="form">
     <div class="box-input">
-      <label for="deviceType">{{ 'aar.type' | translate }}</label>
+      <label for="deviceType">{{ 'device.type' | translate }}</label>
       <select id="deviceType" class="list-text" [(ngModel)]="deviceType" name="deviceType">
-        <option value="" disabled selected>{{ 'aar.selectType' | translate }}</option>
-        <option value="sensor">{{ 'aar.sensor' | translate }}</option>
-        <option value="dispenser">{{ 'aar.dispenser' | translate }}</option>
+        <option value="" disabled selected>{{ 'device.selectType' | translate }}</option>
+        <option value="sensor">{{ 'device.sensor' | translate }}</option>
+        <option value="dispenser">{{ 'device.dispenser' | translate }}</option>
       </select>
     </div>
 
     <div *ngIf="deviceType === 'dispenser'">
       <div class="box-input">
-        <label for="pond">{{ 'aar.pond' | translate }}</label>
-        <input id="pond" class="input-text" type="text" [placeholder]="'aar.pond' | translate" name="pond">
+        <label for="pond">{{ 'device.pond' | translate }}</label>
+        <input id="pond" class="input-text" type="text" [placeholder]="'device.pond' | translate" name="pond">
       </div>
       <div class="box-input">
-        <label for="foodTank">{{ 'aar.foodTank' | translate }}</label>
-        <input id="foodTank" class="input-text" type="text" [placeholder]="'aar.foodTank' | translate" name="foodTank">
+        <label for="foodTank">{{ 'device.foodTank' | translate }}</label>
+        <input id="foodTank" class="input-text" type="text" [placeholder]="'device.foodTank' | translate" name="foodTank">
       </div>
       <div class="box-input">
-        <label for="comment">{{ 'aar.comment' | translate }}</label>
-        <textarea id="comment" class="input-text" [placeholder]="'aar.comment' | translate" name="comment"></textarea>
+        <label for="comment">{{ 'device.comment' | translate }}</label>
+        <textarea id="comment" class="input-text" [placeholder]="'device.comment' | translate" name="comment"></textarea>
       </div>
     </div>
 
     <div *ngIf="deviceType === 'sensor'">
       <div class="box-input">
-        <label for="pond">{{ 'aar.pond' | translate }}</label>
-        <input id="pond" class="input-text" type="text" [placeholder]="'aar.pond' | translate" name="pond">
+        <label for="pond">{{ 'device.pond' | translate }}</label>
+        <input id="pond" class="input-text" type="text" [placeholder]="'device.pond' | translate" name="pond">
       </div>
       <div class="box-input">
-        <label for="loop">{{ 'aar.loop' | translate }}</label>
+        <label for="loop">{{ 'device.loop' | translate }}</label>
         <select id="loop" class="list-text" name="loop">
-          <option value="time">{{ 'aar.time' | translate }}</option>
-          <option value="hours">{{ 'aar.hours' | translate }}</option>
+          <option value="time">{{ 'device.time' | translate }}</option>
+          <option value="hours">{{ 'device.hours' | translate }}</option>
         </select>
       </div>
       <div class="box-input">
-        <label for="comment">{{ 'aar.comment' | translate }}</label>
-        <textarea id="comment" class="input-text" [placeholder]="'aar.comment' | translate" name="comment"></textarea>
+        <label for="comment">{{ 'device.comment' | translate }}</label>
+        <textarea id="comment" class="input-text" [placeholder]="'device.comment' | translate" name="comment"></textarea>
       </div>
     </div>
 
-    <button class="button-add">{{ 'aar.add' | translate }}</button>
+    <button class="button-add">{{ 'device.add' | translate }}</button>
   </form>
 </div>
