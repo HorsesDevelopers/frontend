@@ -1,6 +1,6 @@
 <div class="pending-main-container">
   <div class="content-area">
-    <h1 class="section-title">{{ 'sdap.pendings' | translate }}</h1>
+    <h1 class="section-title">{{ 'schedule.pendings' | translate }}</h1>
     <div class="pending-items" *ngIf="!isLoading">
       <div *ngFor="let pending of schedulePendingData.pendings"
            class="pending-item"
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div *ngIf="isLoading" class="loading">{{ 'common.loading' | translate }}</div>
-    <h1 class="section-title staff-title">{{ 'sdap.staffStatus' | translate }}</h1>
+    <h1 class="section-title staff-title">{{ 'schedule.staffStatus' | translate }}</h1>
     <div class="staff-items" *ngIf="!isLoading">
       <div *ngFor="let staffMember of schedulePendingData.staff" class="staff-item">
         <div class="staff-name">{{ staffMember.name }}</div>
