@@ -1,5 +1,5 @@
 <div class="schedule-main-container">
-  <h1 class="page-title">{{ 'pond.name' | translate }}</h1>
+  <h1 class="page-title">{{ 'schedule.title' | translate }}</h1>
   <div class="schedules-container">
     <h2 class="feeding-schedules">{{ 'schedule.feedingSchedules' | translate }}</h2>
     <div class="search-container">
@@ -8,10 +8,10 @@
     </div>
     <div class="schedules-list">
       <div class="schedule-item" *ngFor="let schedule of dataSource.data; let i = index">
-        <div class="pond-name">{{ 'schedule.pond' | translate }}: {{ schedule.pondName }}</div>
-        <div class="food-type">{{ 'schedule.food' | translate }}: {{ schedule.food }}</div>
+        <div class="pond-name">{{ 'schedule.pond' | translate }}: {{ schedule.name }}</div>
+        <div class="food-type">{{ 'schedule.food' | translate }}: {{ schedule.foodKind }}</div>
         <div class="size">{{ 'schedule.size' | translate }}: {{ schedule.size }} cm</div>
-        <div class="status">{{ 'schedule.status' | translate }}: {{ schedule.status }}</div>
+        <div class="status">{{ 'schedule.status' | translate }}: {{ schedule.status ?? 'N/A' }}</div>
         <div><span class="material-symbols-outlined">edit_square</span></div>
       </div>
     </div>

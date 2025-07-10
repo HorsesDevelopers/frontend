@@ -11,6 +11,7 @@
     "devices": "Dispositivos"
   },
   "schedule": {
+    "title": "Mis Horarios",
     "new": "Nuevo Horario",
     "create": "Crear",
     "editPending": "Editar Tarea Pendiente",

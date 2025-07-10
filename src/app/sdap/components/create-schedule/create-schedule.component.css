@@ -1,47 +1,66 @@
 .create-schedule-container {
   width: 100%;
-  height: 100%;
   padding: 20px;
   background: #FFFFFF;
   font-family: 'Sora', sans-serif;
 }
 
 .page-title {
-  width: 240px;
-  height: 20px;
-  margin: 30px auto;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 20px;
+  margin: 10px 0 25px;
+  font-weight: 600;
+  font-size: 26px;
   text-align: center;
-  color: #000000;
+  color: #2c3e50;
 }
 
 .schedule-form-container {
   width: 90%;
-  max-width: 1130px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 50px;
-  background: #D9D9D9;
-  border-radius: 15px;
+  padding: 25px;
+  background: #f7f9fa;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
 .form-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 18px;
+  gap: 15px;
+}
+
+.form-row.four-columns {
+  flex-wrap: wrap;
 }
 
 .form-row.four-columns .form-group {
-  width: 20%;
+  width: calc(25% - 12px);
 }
 
-.form-row.four-columns .sensor-condition input {
-  width: 35%;
+@media (max-width: 992px) {
+  .form-row.four-columns .form-group {
+    width: calc(50% - 8px);
+  }
+}
+
+@media (max-width: 768px) {
+  .form-row.four-columns .form-group {
+    width: 100%;
+  }
 }
 
 .form-group {
-  width: 48%;
+  width: calc(50% - 8px);
+  margin-bottom: 12px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .form-group {
+    width: 100%;
+  }
 }
 
 .form-group.full-width {
@@ -50,33 +69,41 @@
 
 label {
   display: block;
-  margin-bottom: 10px;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 20px;
-  color: #000000;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #2c3e50;
+  opacity: 1;
 }
 
 input, textarea {
   width: 100%;
-  height: 55px;
+  height: 38px;
   background: #FFFFFF;
-  border: 1px solid #000000;
-  border-radius: 15px;
-  padding: 0 15px;
-  font-size: 24px;
-  line-height: 20px;
-  color: #000000;
+  border: 1px solid #dcdfe6;
+  border-radius: 6px;
+  padding: 0 12px;
+  font-size: 14px;
+  color: #333333;
+  transition: all 0.2s;
+}
+
+input:focus, textarea:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.15);
 }
 
 input::placeholder, textarea::placeholder {
   color: #B9B9B9;
+  opacity: 0.8;
 }
 
 textarea {
-  height: 55px;
-  padding: 15px;
-  resize: none;
+  height: 65px;
+  padding: 10px 12px;
+  resize: vertical;
+  min-height: 45px;
 }
 
 .input-with-unit {
@@ -85,52 +112,63 @@ textarea {
 
 .unit {
   position: absolute;
-  right: 15px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 24px;
-  color: #000000;
+  font-size: 13px;
+  color: #666666;
+  pointer-events: none;
 }
 
 .sensor-condition {
   display: flex;
   align-items: center;
+  gap: 5px;
 }
 
 .sensor-condition input {
-  width: 85px;
+  width: 45%;
+  flex: 1;
 }
 
 .comparator {
-  margin: 0 10px;
-  font-size: 24px;
-  color: #000000;
+  margin: 0 4px;
+  font-size: 16px;
+  color: #333333;
+  flex-shrink: 0;
 }
 
-.buttons-container {
+button[type="submit"] {
   display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
-  width: 90%;
-  max-width: 1130px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.create-button, .back-button {
-  width: 206px;
-  height: 59px;
-  background: rgba(249, 59, 59, 0.57);
-  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 42px;
+  margin: 25px auto 0;
+  background: linear-gradient(to right, #3498db, #2980b9);
+  border-radius: 6px;
   border: none;
-  font-family: 'Sora';
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 20px;
-  color: #000000;
+  font-weight: 500;
+  font-size: 15px;
+  color: #FFFFFF;
   cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.25);
 }
 
-.back-button {
-  width: 244px;
+button[type="submit"]:hover {
+  background: linear-gradient(to right, #2980b9, #1a6ca4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 5px rgba(52, 152, 219, 0.2);
+}
+
+button[type="submit"]::before {
+  content: "+";
+  margin-right: 6px;
+  font-size: 16px;
 }

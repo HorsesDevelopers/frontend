@@ -11,6 +11,7 @@
     "devices": "Devices"
   },
   "schedule": {
+    "title": "My Schedules",
     "new": "New Schedule",
     "create": "Create",
     "editPending": "Edit Pending Task",
