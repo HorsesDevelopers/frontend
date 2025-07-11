@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { inject } from "@angular/core";
-import { catchError, Observable, retry, throwError } from "rxjs";
+import {catchError, map, Observable, retry, throwError} from "rxjs";
 import { environment } from "../../../environments/environment";
 
 export class BaseService<T> {
@@ -20,10 +20,16 @@ export class BaseService<T> {
   }
 
   protected handleError(error: HttpErrorResponse) {
+    // Si el código es 200, no es realmente un error
+    if (error.status === 200) {
+      console.log('Operación exitosa con código 200');
+      return throwError(() => error.error);
+    }
+
     if (error.error instanceof ErrorEvent) {
-      console.log(`An error occurred: ${error.error.message}`);
+      console.log(`Cliente: ${error.error.message}`);
     } else {
-      console.log(`Backend returned code ${error.status}, body was: ${error.error}`);
+      console.log(`Servidor: código ${error.status}, respuesta: ${JSON.stringify(error.error)}`);
     }
     return throwError(() => new Error('Something bad happened; please try again later.'));
   }
@@ -38,8 +44,16 @@ export class BaseService<T> {
   }
 
   public delete(id: any): Observable<any> {
-    return this.http.delete(`${this.resourcePath()}/${id}`, this.getHttpOptions())
-      .pipe(retry(2), catchError(this.handleError));
+    return this.http.delete(`${this.resourcePath()}/${id}`, {
+      ...this.getHttpOptions(),
+      responseType: 'text'  // Especifica que la respuesta es texto plano
+    }).pipe(
+      map(response => {
+        console.log('Delete successful:', response);
+        return { success: true, message: response };
+      }),
+      catchError(this.handleError)
+    );
   }
 
   public update(id: any, item: any): Observable<T> {

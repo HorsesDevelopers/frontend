@@ -11,6 +11,12 @@
     "devices": "Dispositivos"
   },
   "schedule": {
+    "id": "ID",
+    "pondId": "ID Estanque",
+    "name": "Nombre",
+    "duration": "Duración",
+    "day": "Día",
+    "hour": "Hora",
     "title": "Mis Horarios",
     "new": "Nuevo Horario",
     "create": "Crear",

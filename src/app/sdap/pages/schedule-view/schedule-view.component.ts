@@ -61,6 +61,17 @@ export class ScheduleViewComponent implements OnInit {
     this.router.navigate(['/schedule/pending']).then();
   }
 
+  protected deleteSchedule(id: number) {
+    this.scheduleService.delete(id).subscribe({
+      next: () => {
+        this.getAllSchedules();
+      },
+      error: (error) => {
+        console.error('Error deleting schedule:', error);
+      }
+    });
+  }
+
 
 
 }

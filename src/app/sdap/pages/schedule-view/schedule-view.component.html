@@ -8,11 +8,13 @@
     </div>
     <div class="schedules-list">
       <div class="schedule-item" *ngFor="let schedule of dataSource.data; let i = index">
-        <div class="pond-name">{{ 'schedule.pond' | translate }}: {{ schedule.name }}</div>
-        <div class="food-type">{{ 'schedule.food' | translate }}: {{ schedule.foodKind }}</div>
-        <div class="size">{{ 'schedule.size' | translate }}: {{ schedule.size }} cm</div>
-        <div class="status">{{ 'schedule.status' | translate }}: {{ schedule.status ?? 'N/A' }}</div>
-        <div><span class="material-symbols-outlined">edit_square</span></div>
+        <div class="pond-name">{{ 'schedule.id' | translate }}: {{ schedule.id }}</div>
+        <div class="food-type">{{ 'schedule.pondId' | translate }}: {{ schedule.pondId }}</div>
+        <div class="food-type">{{ 'schedule.name' | translate }}: {{ schedule.name }}</div>
+        <div class="size">{{ 'schedule.duration' | translate }}: {{ schedule.duration }}</div>
+        <div class="status">{{ 'schedule.day' | translate }}: {{ schedule.day  }}</div>
+        <div class="status">{{ 'schedule.hour' | translate }}: {{ schedule.hour  }}</div>
+        <button (click)="deleteSchedule(schedule.id)"><span class="material-symbols-outlined">delete</span></button>
       </div>
     </div>
   </div>

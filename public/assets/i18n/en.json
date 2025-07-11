@@ -11,6 +11,12 @@
     "devices": "Devices"
   },
   "schedule": {
+    "id": "ID",
+    "pondId": "Pond Id",
+    "name": "Name",
+    "duration": "Duration",
+    "day": "Day",
+    "hour": "Hour",
     "title": "My Schedules",
     "new": "New Schedule",
     "create": "Create",
