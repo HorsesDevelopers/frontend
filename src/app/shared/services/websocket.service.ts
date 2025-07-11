@@ -13,7 +13,7 @@ export class WebSocketService {
   private stompClient: any;
   private sensorSubject = new Subject<any>();
   private connected = false;
-  private wsUrl = 'http://localhost:8091/ws';
+  private wsUrl = 'https://backend-production-5e9e.up.railway.app/ws';
 
 
   constructor() {}
