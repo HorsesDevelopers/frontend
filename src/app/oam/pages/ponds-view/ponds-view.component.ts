@@ -7,6 +7,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { PondsCardComponent } from '../../components/ponds-card/ponds-card.component';
 import { PondService } from '../../service/pond.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import {ConfirmEditPondsDialogComponent} from '../confirm-edit-ponds-dialog/confirm-edit-ponds-dialog.component';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-ponds-view',
@@ -19,11 +21,36 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class PondsViewComponent implements OnInit {
   protected dataSource: MatTableDataSource<Pond> = new MatTableDataSource<Pond>();
+  ponds: any[] = [];
 
-  constructor(private pondService: PondService, private router: Router) {}
+  constructor(
+    private pondService: PondService,
+    private router: Router,
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
-    this.loadPonds();
+    this.pondService.getAll().subscribe({
+      next: (ponds: Pond[]) => {
+        this.dataSource.data = ponds;
+        const pondsWithoutRegister = ponds.filter(p => p.name === 'Pond without register');
+        if (pondsWithoutRegister.length > 0) {
+          const dialogRef = this.dialog.open(ConfirmEditPondsDialogComponent, {
+            data: { count: pondsWithoutRegister.length },
+            disableClose: true
+          });
+          dialogRef.afterClosed().subscribe(result => {
+            if (result) {
+              const ids = pondsWithoutRegister.map(p => p.id).join(',');
+              this.router.navigate(['/edit-ponds'], { queryParams: { ids } });
+            }
+          });
+        }
+      },
+      error: (err: HttpErrorResponse) => {
+        console.error('Error fetching ponds:', err);
+      }
+    });
   }
 
   private loadPonds(): void {

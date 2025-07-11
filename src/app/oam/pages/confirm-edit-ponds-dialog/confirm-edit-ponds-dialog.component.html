@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Confirmar edición</h2>
+<mat-dialog-content>
+  <p>Se encontraron {{ data.count }} ponds con el nombre "Pond without register". ¿Deseas cambiarlos?</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button color="primary" (click)="onConfirm()">Editar</button>
+</mat-dialog-actions>

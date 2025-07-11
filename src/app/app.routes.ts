@@ -17,6 +17,7 @@ import {HomeComponent} from './iam/pages/home/home.component';
 import {PageNotFoundComponent} from './public/pages/page-not-found/page-not-found.component';
 import { CreatePondComponent } from './oam/pages/create-pond/create-pond.component';
 import {CreateFishComponent} from './oam/pages/create-fish/create-fish.component';
+import {EditPondsComponent} from './oam/pages/edit-ponds/edit-ponds.component';
 
 
 export const routes: Routes = [
@@ -36,6 +37,7 @@ export const routes: Routes = [
   { path: 'sensors/create', component: CreateSensorComponent },
   { path: 'foods/create', component: CreateFoodComponent },
   { path: 'create-pond', component: CreatePondComponent },
+  { path: 'edit-ponds', component: EditPondsComponent },
   { path: '**', component: PageNotFoundComponent},
   {path: 'fishes/create',component:CreateFishComponent, canActivate: [authenticationGuard]},
 ];
