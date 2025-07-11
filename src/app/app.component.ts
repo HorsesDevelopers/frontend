@@ -9,7 +9,7 @@ import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: './shared/services/app.component.html',
   imports: [
     RouterLink,
     RouterOutlet,

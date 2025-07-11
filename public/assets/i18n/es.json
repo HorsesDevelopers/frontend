@@ -85,7 +85,8 @@
     "waterQuality": "Calidad del Agua",
     "temp": "Temp",
     "oxygen": "Oxígeno",
-    "ph": "pH"
+    "ph": "pH",
+    "turbidity": "Turbidez"
   },
   "common": {
     "cancel": "Cancelar",

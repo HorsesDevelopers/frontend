@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Escucha de Datos de Sensores</title>
+  <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .connected {
+      color: green;
+    }
+
+    .disconnected {
+      color: red;
+    }
+
+    button {
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    .log {
+      height: 300px;
+      border: 1px solid #ccc;
+      overflow-y: scroll;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <h1>Monitoreo de Datos de Sensores</h1>
+
+  <div>
+    Estado: <span id="status" class="disconnected">Desconectado</span>
+  </div>
+
+  <div class="controls">
+    <button id="connect">Conectar</button>
+    <button id="disconnect" disabled>Desconectar</button>
+  </div>
+
+  <h3>Datos en tiempo real</h3>
+  <div id="log" class="log"></div>
+</div>
+
+<script>
+  let stompClient = null;
+  let subscription = null;
+
+  function connect() {
+    logMessage("Intentando conectar a WebSocket...");
+    const socket = new SockJS('http://localhost:8091/ws', null, {
+      transports: ['websocket'],
+      withCredentials: true
+    });
+
+    stompClient = Stomp.over(socket);
+    stompClient.debug = null; // Deshabilitar logs internos
+
+    stompClient.connect({}, function (frame) {
+      logMessage("Conectado: " + frame);
+      document.getElementById('status').textContent = "Conectado";
+      document.getElementById('status').className = "connected";
+      document.getElementById('connect').disabled = true;
+      document.getElementById('disconnect').disabled = false;
+
+      // Suscribirse automáticamente al tópico de sensores
+      subscription = stompClient.subscribe('/topic/sensors', function (message) {
+        try {
+          const data = JSON.parse(message.body);
+          logMessage("Datos recibidos - Estanque: " + data.pondId +
+            ", Tipo: " + data.sensorType +
+            ", Valor: " + data.value);
+        } catch (e) {
+          logMessage("Error al procesar mensaje: " + e);
+        }
+      });
+
+      logMessage("Escuchando datos de sensores...");
+    }, function (error) {
+      logMessage("Error de conexión: " + error);
+      document.getElementById('status').textContent = "Error: " + error;
+      document.getElementById('status').className = "disconnected";
+    });
+  }
+
+  function disconnect() {
+    if (stompClient !== null) {
+      if (subscription) {
+        subscription.unsubscribe();
+        subscription = null;
+      }
+      stompClient.disconnect();
+      stompClient = null;
+    }
+
+    document.getElementById('status').textContent = "Desconectado";
+    document.getElementById('status').className = "disconnected";
+    document.getElementById('connect').disabled = false;
+    document.getElementById('disconnect').disabled = true;
+
+    logMessage("Desconectado");
+  }
+
+  function logMessage(message) {
+    const log = document.getElementById('log');
+    const timestamp = new Date().toLocaleTimeString();
+    log.innerHTML += '<div>' + timestamp + ' - ' + message + '</div>';
+    log.scrollTop = log.scrollHeight;
+  }
+
+  document.getElementById('connect').addEventListener('click', connect);
+  document.getElementById('disconnect').addEventListener('click', disconnect);
+</script>
+</body>
+
+</html>

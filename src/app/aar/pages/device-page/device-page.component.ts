@@ -24,7 +24,7 @@ export class DevicePageComponent implements OnInit {
   constructor(
     private sensorService: SensorService,
     private dispenserService: DispenserService,
-    private router: Router // Importación del Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {

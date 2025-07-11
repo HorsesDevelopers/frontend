@@ -1,8 +1,9 @@
 export class Sensor {
   id!: number
-  pond_id!: number
+  pondId!: number
   oxygen!: number
   nytrogen!: number
   temperature!: string
   status!: string
+  turbidity?: number
 }

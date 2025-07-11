@@ -53,3 +53,35 @@
 .sensor-buttons.active{
   background: #F93B3B;
 }
+
+.websocket-status {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.connected {
+  color: green;
+  background-color: rgba(0, 128, 0, 0.1);
+}
+
+.disconnected {
+  color: red;
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.websocket-button {
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.websocket-button:hover {
+  background-color: #45a049;
+}

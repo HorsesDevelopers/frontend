@@ -1,7 +1,17 @@
 <div class="home">
   <div class="home-container">
+    <div class="websocket-status" [ngClass]="{'connected': websocketStatus === 'Conectado', 'disconnected': websocketStatus !== 'Conectado'}">
+      Estado WebSocket: {{ websocketStatus }}
+      <button class="websocket-button" (click)="toggleWebSocketConnection()">
+        {{ websocketService.isConnected() ? 'Desconectar' : 'Conectar' }}
+      </button>
+    </div>
+
     <div class="pond-info">
-      <app-sensor-info [sensorId]="selectedSensorId"></app-sensor-info>
+      <app-sensor-info
+        [sensorId]="selectedSensorId"
+        [sensor]="getSelectedSensor()">
+      </app-sensor-info>
       <div class="spacer-sp"></div>
       <div *ngIf="sensors" class="sensor-buttons-list">
         <button *ngFor="let sensor of sensors"
